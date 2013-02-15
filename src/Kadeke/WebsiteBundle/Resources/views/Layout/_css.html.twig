@@ -1,0 +1,7 @@
+
+    {% block css %}
+        {% stylesheets '@KadekeWebsiteBundle/Resources/public/css/*.css' %}
+            <link rel='stylesheet' href='{{ asset_url }}' type='text/css' />
+        {% endstylesheets %}
+    {% endblock %}
+

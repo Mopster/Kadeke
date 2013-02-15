@@ -1,5 +1,9 @@
 kadeke_website:
-    resource: "@kadekeWebsiteBundle/Resources/config/routing.yml"
+    resource: "@KadekeWebsiteBundle/Resources/config/routing.yml"
+    prefix:   /
+
+kadeke_blog:
+    resource: "@KadekeBlogBundle/Resources/config/routing.yml"
     prefix:   /
 
 # Internal routing configuration to handle ESI

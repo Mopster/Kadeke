@@ -1,0 +1,4 @@
+KadekeWebsiteBundle_default:
+    resource: "@KadekeWebsiteBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /
