@@ -7,6 +7,7 @@ use Kadeke\WebsiteBundle\Entity\ContentPage;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * @ORM\Entity()
  * @ORM\Table(name="kd_blog_entries")
  * @ORM\HasLifecycleCallbacks()
  */

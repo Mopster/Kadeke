@@ -20,6 +20,7 @@ use Kadeke\WebsiteBundle\PagePartAdmin\ContentPagePagePartAdminConfigurator;
  *
  * @ORM\Entity()
  * @ORM\Table(name="kd_content_pages")
+ * @ORM\MappedSuperclass
  */
 class ContentPage extends AbstractPage implements HasPagePartsInterface
 {

@@ -44,6 +44,10 @@ class HomePage extends AbstractPage implements HasPagePartsInterface
             array(
                 'name' => 'FormPage',
                 'class'=> "Kadeke\WebsiteBundle\Entity\FormPage"
+            ),
+            array(
+                'name' => 'Blog',
+                'class'=> "Kadeke\BlogBundle\Entity\Blog"
             )
         );
     }
