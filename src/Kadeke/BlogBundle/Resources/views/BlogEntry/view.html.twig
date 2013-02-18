@@ -1,0 +1,6 @@
+{% extends 'KadekeWebsiteBundle:Page:layout.html.twig' %}
+{% block content %}
+    <h2>{{ page.title }}</h2>
+    <h3>{{ page.author.name }} - {{ page.getDate() | date('d/m/Y H:i') }}</h3>
+    {{ render_pageparts(page, 'main') }}
+{% endblock %}

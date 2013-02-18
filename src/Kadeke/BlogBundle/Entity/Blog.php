@@ -2,15 +2,15 @@
 
 namespace Kadeke\BlogBundle\Entity;
 
-use Kadeke\WebsiteBundle\Entity\ContentPage;
-
 use Doctrine\ORM\Mapping as ORM;
+use Kadeke\BlogBundle\Form\BlogAdminType;
+use Kadeke\WebsiteBundle\Entity\AbstractContentPage;
 
 /**
  * @ORM\Entity()
  * @ORM\Table(name="kd_blog_blog")
  */
-class Blog extends ContentPage
+class Blog extends AbstractContentPage
 {
 
     /**
@@ -26,6 +26,16 @@ class Blog extends ContentPage
                 'class'=> "Kadeke\BlogBundle\Entity\BlogEntry"
             )
         );
+    }
+
+    public function getDefaultAdminType()
+    {
+        return new BlogAdminType();
+    }
+
+    public function getDefaultView()
+    {
+        return "KadekeBlogBundle:Blog:view.html.twig";
     }
 
 }

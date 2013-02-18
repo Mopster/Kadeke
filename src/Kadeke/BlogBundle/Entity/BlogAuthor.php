@@ -2,9 +2,9 @@
 
 namespace Kadeke\BlogBundle\Entity;
 
-use Kunstmaan\AdminBundle\Entity\AbstractEntity;
-
 use Doctrine\ORM\Mapping as ORM;
+use Kadeke\BlogBundle\Form\BlogAuthorAdminType;
+use Kunstmaan\AdminBundle\Entity\AbstractEntity;
 
 /**
  * The author for a blog entry
@@ -22,6 +22,7 @@ class BlogAuthor extends AbstractEntity
      */
     protected $name;
 
+
     public function setName($name)
     {
         $this->name = $name;
@@ -32,4 +33,13 @@ class BlogAuthor extends AbstractEntity
         return $this->name;
     }
 
+    public function __toString()
+    {
+        return $this->getName();
+    }
+
+    public function getDefaultAdminType()
+    {
+        return new BlogAuthorAdminType();
+    }
 }

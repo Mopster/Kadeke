@@ -2,16 +2,16 @@
 
 namespace Kadeke\BlogBundle\Entity;
 
-use Kadeke\WebsiteBundle\Entity\ContentPage;
-
+use Kadeke\WebsiteBundle\Entity\AbstractContentPage;
+use Kadeke\BlogBundle\Form\BlogEntryAdminType;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Entity()
  * @ORM\Table(name="kd_blog_entries")
- * @ORM\HasLifecycleCallbacks()
+ * @ORM\HasLifecycleCallbacks
  */
-class BlogEntry extends ContentPage
+class BlogEntry extends AbstractContentPage
 {
 
     /**
@@ -27,13 +27,13 @@ class BlogEntry extends ContentPage
      * @var BlogAuthor
      *
      * @ORM\ManyToOne(targetEntity="BlogAuthor")
-     * @ORM\JoinColumn(name="blogauthor_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      */
     protected $author;
 
     public function setDate($date)
     {
-        $this->date;
+        $this->date = $date;
     }
 
     public function getDate()
@@ -61,6 +61,16 @@ class BlogEntry extends ContentPage
         return array();
     }
 
+    public function getDefaultAdminType()
+    {
+        return new BlogEntryAdminType();
+    }
+
+    public function getDefaultView()
+    {
+        return "KadekeBlogBundle:BlogEntry:view.html.twig";
+    }
+
     /**
      * Before persisting this entity, check the date.
      * When no date is present, fill in current date and time.
@@ -71,7 +81,7 @@ class BlogEntry extends ContentPage
     {
         // Set date to now when none is set
         if ($this->date == null) {
-            $this->setDate(new \DateTime('now'));
+            $this->setDate(new \DateTime());
         }
     }
 }

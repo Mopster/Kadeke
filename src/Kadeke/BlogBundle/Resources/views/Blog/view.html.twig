@@ -1,0 +1,12 @@
+{% extends 'KadekeWebsiteBundle:Page:layout.html.twig' %}
+{% block content %}
+
+    {{ render_pageparts(page, 'main') }}
+
+    {% block blog %}
+        {% for entry in nodemenu.current.children %}
+            {% include 'KadekeBlogBundle:BlogEntry:teaser.html.twig' %}
+        {% endfor %}
+    {% endblock %}
+
+{% endblock %}
