@@ -2,5 +2,42 @@
 {% block title %}{% endblock %}
 
 {% block content %}
+    <div class="row" id="about">
+        <div class="span4">
+            <h3>Professional</h3>
+            <ul>
+                <li>Kenny Debrauwer</li>
+                <li>Web Developer</li>
+                <li>Kunstmaan</li>
+                <li>Leuven, Belgium</li>
+                <li>Java & PHP (Symfony2)</li>
+            </ul>
+        </div>
+        <div class="span4">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="https://twitter.com/MopsterKD" target="_blank">Twitter</a></li>
+                <li><a href="https://github.com/Mopster" target="_blank">GitHub</a></li>
+                <li><a href="http://be.linkedin.com/in/kennydebrauwer/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </div>
+        <div class="span4">
+            <h3>Personal</h3>
+            <ul>
+                <li>Collector, Gamer</li>
+                <li>Games, Movies, Series, Anime, Manga</li>
+                <li>Astronomy, History, Japan</li>
+                <li>Dutch, English, French, German, Japanese</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="span12">
+            <h2>Blog</h2>
+            {% render 'KadekeBlogBundle:BlogEntry:getMostRecentBlogEntries' with {'limit' : 3} %}
+        </div>
+    </div>
+
     {{ render_pageparts(page, 'main') }}
 {% endblock %}

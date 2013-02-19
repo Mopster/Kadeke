@@ -7,7 +7,7 @@ use Kadeke\BlogBundle\Form\BlogEntryAdminType;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="Kadeke\BlogBundle\Repository\BlogEntryRepository")
  * @ORM\Table(name="kd_blog_entries")
  * @ORM\HasLifecycleCallbacks
  */

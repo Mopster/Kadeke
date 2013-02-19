@@ -2,7 +2,6 @@
 
 namespace Kadeke\BlogBundle\Form;
 
-use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 

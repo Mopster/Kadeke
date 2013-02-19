@@ -3,6 +3,8 @@
 namespace Kadeke\WebsiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Kunstmaan\NodeBundle\Helper\RenderContext;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\HttpFoundation\Request;
@@ -67,4 +69,6 @@ class HomePage extends AbstractPage implements HasPagePartsInterface
     {
         return "KadekeWebsiteBundle:HomePage:view.html.twig";
     }
+
+
 }

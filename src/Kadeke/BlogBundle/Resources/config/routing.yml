@@ -1,8 +1,3 @@
-KadekeBlogBundle_default:
-    resource: "@KadekeBlogBundle/Controller/DefaultController.php"
-    type:     annotation
-    prefix:   /
-
 KadekeBlogBundle_blogauthor_admin_list:
     resource: @KadekeBlogBundle/Controller/BlogAuthorAdminListController.php
     type:     annotation

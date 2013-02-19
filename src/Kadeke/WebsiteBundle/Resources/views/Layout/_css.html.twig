@@ -1,6 +1,12 @@
 
     {% block css %}
-        {% stylesheets '@KadekeWebsiteBundle/Resources/public/css/*.css' %}
+        {% stylesheets
+        '@KadekeWebsiteBundle/Resources/public/css/bootstrap.min.css'
+        '@KadekeWebsiteBundle/Resources/public/css/bootstrap-responsive.min.css'
+        '@KadekeWebsiteBundle/Resources/public/css/font-awesome.min.css'
+        '@KadekeWebsiteBundle/Resources/public/css/bootswatch.css'
+        '@KadekeWebsiteBundle/Resources/public/css/kadeke.css'
+        %}
             <link rel='stylesheet' href='{{ asset_url }}' type='text/css' />
         {% endstylesheets %}
     {% endblock %}

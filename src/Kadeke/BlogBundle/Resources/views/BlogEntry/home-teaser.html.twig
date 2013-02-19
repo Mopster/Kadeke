@@ -1,0 +1,9 @@
+{% block teaser %}
+    {% set blogentry = entry %}
+    <div class="blog-entry-teaser">
+        {% set nodetranslation = get_node_translation_for(blogentry) %}
+        <h4><a href="{{ path('_slug', {'url' : nodetranslation.url }) }}">{{ blogentry.title }}</a></h4>
+        <h5>{{ blogentry.author.name }} - {{ blogentry.getDate() | date('d/m/Y H:i') }}</h5>
+        {{ render_pageparts(blogentry, 'main') | truncate(200) | striptags }}
+    </div>
+{% endblock %}

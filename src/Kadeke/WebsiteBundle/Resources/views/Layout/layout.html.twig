@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
     <head>
         <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{{ websitetitle | trans }}{% block title %} - {{ page.title }}{% endblock %}</title>
         {% if page is defined %}
             {{ render_seo_metadata_for(page) }}
@@ -16,75 +16,56 @@
         {% include 'KadekeWebsiteBundle:Layout:_js_header.html.twig' %}
 
     </head>
-    <body>
+    <body id="top">
 
-    <!-- Header and Nav -->
-
-    <div class="row">
-        <div class="twelve columns">
-            <nav class="top-bar">
-                <ul>
-                    <li class="name">
-                        <h1>
-                            {% set homepagePageNode = nodemenu.getNodeByInternalName('homepage') %}
-                            <a href="{{ path('_slug', { 'url': homepagePageNode.slug }) }}">Generated Website</a>
-                        </h1>
-                    </li>
-                    <li class="toggle-topbar"><a href="#"></a></li>
-                </ul>
-                <section>
-                    {% if nodemenu is defined %}
-                        <ul class="right">
-                            <li class="divider show-for-medium-and-up"></li>
+        <div class="container">
+            <header class="jumbotron subhead" id="overview">
+                <div class="row">
+                    <div class="span6">
+                        {% set homepagePageNode = nodemenu.getNodeByInternalName('homepage') %}
+                        <h1><a href="{{ path('_slug', { 'url': homepagePageNode.slug }) }}">Kadeke</a></h1>
+                        <p class="lead">A blog in the making</p>
+                    </div>
+                </div>
+                <div class="subnav">
+                    <ul class="nav nav-pills">
+                        {% if nodemenu is defined %}
                             {% set activeSubnode = nodemenu.getActiveForDepth(1) %}
                             {% for node in activeSubnode.children %}
-                                <li {% if node.children|length>0 %}class="has-dropdown"{% endif %}>
+                                <li {% if(node.active) %} class="active" {% endif %}>
                                     <a href="{{ path('_slug', { 'url': node.slug }) }}">{{ node.title }}</a>
-                                    {% if node.children|length>0 %}
-                                        <ul class="dropdown">
-                                            {% for node in node.children %}
-                                                <li><a href="{{ path('_slug', { 'url': node.slug }) }}">{{ node.title }}</a></li>
-                                            {% endfor %}
-                                        </ul>
-                                    {% endif %}
                                 </li>
                             {% endfor %}
-                        </ul>
-                    {% endif %}
-                </section>
-            </nav>
-        </div>
-    </div>
-    <div class="row">
-        <div class="twelve columns">
-            {% block content %}{% endblock %}
-        </div>
-    </div>
-
-    <footer class="row">
-        <div class="twelve columns">
-            <hr />
-            <div class="row">
-                <div class="twelve columns">
-                    <p>&copy; {{ "now"|date("Y") }}</p>
+                        {% endif %}
+                    </ul>
                 </div>
-            </div>
+            </header>
+
+            <section id="content">
+                {% block content %}{% endblock %}
+            </section>
+
+            <hr />
+            <footer id="footer">
+                <p class="pull-right">
+                    <a href="#top">Back to top</a>
+                </p>
+                <div class="links">
+                </div>
+            </footer>
         </div>
-    </footer>
-
-    {% include 'KadekeWebsiteBundle:Layout:_js_footer.html.twig' %}
 
 
-    <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
-    mathiasbynens.be/notes/async-analytics-snippet -->
-    <script>
-        var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-        (function(d,t){
-            var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)
-        }(document,'script'));
-    </script>
+        {% include 'KadekeWebsiteBundle:Layout:_js_footer.html.twig' %}
+
+        <script>
+            var _gaq=[['_setAccount','UA-38620620-1'],['_trackPageview']];
+            (function(d,t){
+                var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+                s.parentNode.insertBefore(g,s)
+            }(document,'script'));
+        </script>
 
     </body>
 </html>

@@ -3,9 +3,12 @@
 
     {{ render_pageparts(page, 'main') }}
 
+    {% set count = 1 %}
     {% block blog %}
         {% for entry in nodemenu.current.children %}
+            {% if count > 1 %}<hr />{% endif %}
             {% include 'KadekeBlogBundle:BlogEntry:teaser.html.twig' %}
+            {% set count = count + 1 %}
         {% endfor %}
     {% endblock %}
 
