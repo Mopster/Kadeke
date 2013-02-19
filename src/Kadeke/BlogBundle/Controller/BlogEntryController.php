@@ -17,8 +17,14 @@ class BlogEntryController extends Controller
         $blogEntryRepository = $em->getRepository('KadekeBlogBundle:BlogEntry');
         $blogentries = $blogEntryRepository->getMostRecentBlogEntries($limit);
 
+        $nodeTranslationRepository = $em->getRepository('KunstmaanNodeBundle:NodeTranslation');
+        $blognodes = array();
+        foreach ($blogentries as $entry){
+            $blognodes[] = array('nodetranslation' => $nodeTranslationRepository->getNodeTranslationFor($entry), 'page' => $entry);
+        }
+
         return $this->render('KadekeBlogBundle:Blog:home-teaser.html.twig',
-            array('blogentries' => $blogentries)
+            array('blogentries' => $blognodes)
         );
     }
 

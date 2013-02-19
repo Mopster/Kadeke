@@ -1,3 +1,5 @@
 {% for entry in blogentries %}
+    {% set blogentrynodetranslation = entry['nodetranslation'] %}
+    {% set blogentrypage = entry['page'] %}
     {% include 'KadekeBlogBundle:BlogEntry:home-teaser.html.twig' %}
 {% endfor %}
