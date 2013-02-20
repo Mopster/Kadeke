@@ -19,3 +19,33 @@ header h1 a, header h1 a:hover, header h1 a:focus {
 div.subnav-fixed {
     top: 0px;
 }
+
+.social-button-container {
+    margin-top: 15px;
+    position: relative;
+    display: inline-block;
+}
+
+.social-button {
+    float:left;
+}
+
+.social-button-container .fb {
+    margin-top: -3px;
+}
+
+.social-button-container .tw {
+    width: 80px;
+}
+
+.image-pp {
+    margin: 1em 0 1em 0;
+}
+
+.image-pp img {
+    border: #cccccc solid 1px;
+}
+
+.date {
+    font-style:italic;
+}
