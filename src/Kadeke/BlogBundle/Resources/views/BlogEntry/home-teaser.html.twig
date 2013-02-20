@@ -1,7 +1,7 @@
 {% block teaser %}
     <div class="blog-entry-teaser">
         <h4><a href="{{ path('_slug', {'url' : blogentrynodetranslation.url }) }}">{{ blogentrypage.title }}</a></h4>
-        <h5>{{ blogentrypage.getDate() | date('d/m/Y H:i') }}</h5>
+        <h5 class="date">{{ blogentrypage.getDate() | date('dS F Y - H:i') }}</h5>
         {{ render_pageparts(blogentrypage, 'main') | truncate(200) | striptags }}
     </div>
 {% endblock %}
