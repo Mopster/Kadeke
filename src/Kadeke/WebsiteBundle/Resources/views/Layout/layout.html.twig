@@ -48,9 +48,11 @@
             <hr />
             <footer id="footer">
                 {% block footer %}
-                    <p class="pull-right">
-                        <a href="#top">Back to top</a>
-                    </p>
+                    {% block footer_to_top %}
+                        <p class="pull-right">
+                            <a href="#top">Back to top</a>
+                        </p>
+                    {% endblock %}
                     <div class="links">
                     </div>
 
