@@ -47,11 +47,13 @@
 
             <hr />
             <footer id="footer">
-                <p class="pull-right">
-                    <a href="#top">Back to top</a>
-                </p>
-                <div class="links">
-                </div>
+                {% block footer %}
+                    <p class="pull-right">
+                        <a href="#top">Back to top</a>
+                    </p>
+                    <div class="links">
+                    </div>
+                {% endblock %}
             </footer>
         </div>
 

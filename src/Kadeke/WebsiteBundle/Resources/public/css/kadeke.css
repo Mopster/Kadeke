@@ -57,3 +57,7 @@ div.subnav-fixed {
 .date {
     font-style:italic;
 }
+
+hr {
+    margin: 15px 0;
+}
