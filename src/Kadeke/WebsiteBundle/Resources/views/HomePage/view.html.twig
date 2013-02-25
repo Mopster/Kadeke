@@ -29,10 +29,12 @@
                         </div>
                     </div>
                 </div>
-                <hr />
                 <div class="row-fluid">
                     <div class="span12">
-                        <h3>Blog</h3>
+                        <h3 class="blog_title" >Creating a Kunstmaan Bundles Blog</h3>
+                        <h5 class="blog_intro">How do you create a blog using the Kunstmaan bundles for Symfony2. I will explain how I built this blog step by step and help you on your merry way.</h5>
+                    </div>
+                    <div class="span12 well blog_summary">
                         {% render 'KadekeBlogBundle:BlogEntry:getMostRecentBlogEntries' with {'limit' : 3} %}
                     </div>
                 </div>
