@@ -3,14 +3,17 @@
 namespace Kadeke\WebsiteBundle\Entity\Pages;
 
 use Doctrine\ORM\Mapping as ORM;
+use Kadeke\WebsiteBundle\PagePartAdmin\BannerPagePartAdminConfigurator;
+use Kadeke\WebsiteBundle\PagePartAdmin\ContentPagePagePartAdminConfigurator;
+use Kunstmaan\PagePartBundle\Helper\HasPagePartsInterface;
+use Kunstmaan\NodeBundle\Entity\AbstractPage;
 use Kadeke\WebsiteBundle\Form\Pages\AboutPageAdminType;
-use Kadeke\WebsiteBundle\Entity\AbstractContentPage;
 
 /**
  * @ORM\Entity()
  * @ORM\Table(name="kd_about_page")
  */
-class AboutPage extends AbstractContentPage
+class AboutPage extends AbstractPage implements HasPagePartsInterface
 {
     /**
      * @return array
@@ -40,5 +43,13 @@ class AboutPage extends AbstractContentPage
     public function getDefaultView()
     {
         return "KadekeWebsiteBundle:Pages\AboutPage:view.html.twig";
+    }
+
+    /**
+     * @return AbstractPagePartAdminConfigurator[]
+     */
+    public function getPagePartAdminConfigurations()
+    {
+        return array(new ContentPagePagePartAdminConfigurator(), new BannerPagePartAdminConfigurator());
     }
 }

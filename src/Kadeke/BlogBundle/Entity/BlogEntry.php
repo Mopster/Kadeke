@@ -2,7 +2,11 @@
 
 namespace Kadeke\BlogBundle\Entity;
 
-use Kadeke\WebsiteBundle\Entity\AbstractContentPage;
+
+use Kunstmaan\NodeBundle\Entity\AbstractPage;
+use Kunstmaan\PagePartBundle\Helper\HasPagePartsInterface;
+use Kadeke\WebsiteBundle\PagePartAdmin\BannerPagePartAdminConfigurator;
+use Kadeke\WebsiteBundle\PagePartAdmin\ContentPagePagePartAdminConfigurator;
 use Kadeke\BlogBundle\Form\BlogEntryAdminType;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -11,7 +15,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="kd_blog_entries")
  * @ORM\HasLifecycleCallbacks
  */
-class BlogEntry extends AbstractContentPage
+class BlogEntry extends AbstractPage implements HasPagePartsInterface
 {
 
     /**
@@ -69,6 +73,14 @@ class BlogEntry extends AbstractContentPage
     public function getDefaultView()
     {
         return "KadekeBlogBundle:BlogEntry:view.html.twig";
+    }
+
+    /**
+     * @return AbstractPagePartAdminConfigurator[]
+     */
+    public function getPagePartAdminConfigurations()
+    {
+        return array(new ContentPagePagePartAdminConfigurator(), new BannerPagePartAdminConfigurator());
     }
 
     /**

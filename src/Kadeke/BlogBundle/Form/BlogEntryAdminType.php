@@ -2,11 +2,11 @@
 
 namespace Kadeke\BlogBundle\Form;
 
-use Kadeke\WebsiteBundle\Form\AbstractContentPageAdminType;
+use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class BlogEntryAdminType extends AbstractContentPageAdminType
+class BlogEntryAdminType extends AbstractType
 {
 
     public function buildForm(FormBuilderInterface $builder, array $options)
