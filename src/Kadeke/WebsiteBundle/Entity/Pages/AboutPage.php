@@ -1,6 +1,6 @@
 <?php
 
-namespace Kadeke\WebsiteBundle\Entity\Pages\About;
+namespace Kadeke\WebsiteBundle\Entity\Pages;
 
 use Doctrine\ORM\Mapping as ORM;
 use Kadeke\WebsiteBundle\Form\Pages\AboutPageAdminType;
