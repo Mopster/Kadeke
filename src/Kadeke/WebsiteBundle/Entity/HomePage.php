@@ -3,11 +3,8 @@
 namespace Kadeke\WebsiteBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Kunstmaan\NodeBundle\Helper\RenderContext;
-use Symfony\Component\DependencyInjection\ContainerInterface;
 
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\HttpFoundation\Request;
 
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
 use Kunstmaan\PagePartBundle\Helper\HasPagePartsInterface;
@@ -40,12 +37,20 @@ class HomePage extends AbstractPage implements HasPagePartsInterface
     {
         return array(
             array(
-                'name' => 'ContentPage',
+                'name' => 'Page',
                 'class'=> "Kadeke\WebsiteBundle\Entity\ContentPage"
             ),
             array(
-                'name' => 'FormPage',
+                'name' => 'Form',
                 'class'=> "Kadeke\WebsiteBundle\Entity\FormPage"
+            ),
+            array(
+                'name' => 'Blog',
+                'class'=> "Kadeke\BlogBundle\Entity\Blog"
+            ),
+            array(
+                'name' => 'About',
+                'class'=> "Kadeke\WebsiteBundle\Entity\Pages\About\AboutPage"
             )
         );
     }

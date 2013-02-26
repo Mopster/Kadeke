@@ -66,6 +66,6 @@ hr {
     font-size: 12px;;
 }
 
-.blog_summary {
-    margin-left:10px;
+.span12 .blog_summary {
+    margin-left:0px;
 }

@@ -1,13 +1,14 @@
 <?php
 
-namespace Kadeke\WebsiteBundle\Form;
+namespace Kadeke\WebsiteBundle\Form\Pages\About;
 
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Kadeke\WebsiteBundle\Form\AbstractContentPageAdminType;
 
 /**
  * The admin type for content pages
  */
-class ContentPageAdminType extends AbstractContentPageAdminType
+class AboutPageAdminType extends AbstractContentPageAdminType
 {
 
     /**
@@ -18,7 +19,7 @@ class ContentPageAdminType extends AbstractContentPageAdminType
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Kadeke\WebsiteBundle\Entity\ContentPage'
+            'data_class' => 'Kadeke\WebsiteBundle\Entity\Pages\About\AboutPage'
         ));
     }
 

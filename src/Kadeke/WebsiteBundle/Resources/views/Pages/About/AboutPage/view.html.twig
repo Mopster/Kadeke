@@ -1,0 +1,29 @@
+{% extends 'KadekeWebsiteBundle:Page:layout.html.twig' %}
+{% block content %}
+    {{ render_pageparts(page, 'main') }}
+
+    <div class="span12">
+        <div class="row-fluid">
+            <div class="span6">
+                <h3>Professional</h3>
+                <ul>
+                    <li>Kenny Debrauwer</li>
+                    <li>Web Developer @ <a href="http://www.kunstmaan.be" target="_blank">Kunstmaan</a></li>
+                    <li>Leuven, Belgium</li>
+                    <li>Java & PHP (Symfony2)</li>
+                    <li><a href="https://github.com/Mopster" target="_blank">GitHub</a></li>
+                    <li><a href="http://be.linkedin.com/in/kennydebrauwer/" target="_blank">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="span6">
+                <h3>Personal</h3>
+                <ul>
+                    <li>Collector, Gamer</li>
+                    <li>Games, Movies, Series, Anime, Manga</li>
+                    <li>Astronomy, History, Japan</li>
+                    <li>Dutch, English, French, German, Japanese</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
