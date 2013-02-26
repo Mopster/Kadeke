@@ -13,6 +13,17 @@ class BlogEntryAdminType extends AbstractType
     {
         $builder->add('title', 'text');
         $builder->add('author');
+        $builder->add(
+            'date',
+            'datetime',
+            array(
+                'required' => true,
+                'date_widget' => 'single_text',
+                'time_widget' => 'single_text',
+                'date_format' => 'dd/MM/yyyy'
+            )
+        );
+
     }
 
     public function setDefaultOptions(OptionsResolverInterface $resolver)
