@@ -3,7 +3,7 @@
 namespace Kadeke\WebsiteBundle\Entity\Pages\About;
 
 use Doctrine\ORM\Mapping as ORM;
-use Kadeke\WebsiteBundle\Form\Pages\About\AboutPageAdminType;
+use Kadeke\WebsiteBundle\Form\Pages\AboutPageAdminType;
 use Kadeke\WebsiteBundle\Entity\AbstractContentPage;
 
 /**
@@ -39,6 +39,6 @@ class AboutPage extends AbstractContentPage
      */
     public function getDefaultView()
     {
-        return "KadekeWebsiteBundle:Pages\About\AboutPage:view.html.twig";
+        return "KadekeWebsiteBundle:Pages\AboutPage:view.html.twig";
     }
 }
