@@ -4,6 +4,7 @@ namespace Kadeke\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Kunstmaan\NodeBundle\Entity\NodeTranslation;
 
 /**
  * BlogComment
@@ -59,8 +60,8 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     /**
      * @var Node
      *
-     * @ORM\ManyToOne(targetEntity="Node")
-     * @ORM\JoinColumn(name="node_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="NodeTranslation")
+     * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
      */
     private $parent;
 
@@ -215,7 +216,7 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     /**
      * Get parent
      *
-     * @return Node
+     * @return NodeTranslation
      */
     public function getParent()
     {

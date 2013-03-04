@@ -71,4 +71,10 @@ class BlogCommentAdminListConfigurator extends AbstractDoctrineORMAdminListConfi
         return 'BlogComment';
     }
 
+    public function canAdd()
+    {
+        return false;
+    }
+
+
 }

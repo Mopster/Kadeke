@@ -19,15 +19,18 @@ class BlogCommentController extends Controller
      */
     public function newCommentAction($blogentry_id)
     {
-        $blogentry = $this->getBlogEntry($blogentry_id);
+        $em = $this->getDoctrine()->getManager();
+        $blogentry = $this->getBlogEntry($em, $blogentry_id);
+        $nodetranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->getNodeTranslationFor($blogentry);
 
         $comment = new BlogComment();
-        $comment->setParent($blogentry);
+        $comment->setParent($nodetranslation);
 
         $form = $this->createForm(new BlogCommentType(), $comment);
 
         return array(
             'comment' => $comment,
+            'page' => $blogentry,
             'form' => $form->createView()
         );
     }
@@ -39,35 +42,37 @@ class BlogCommentController extends Controller
      */
     public function createCommentAction($blogentry_id)
     {
-        $blogentry = $this->getBlogEntry($blogentry_id);
+        $em = $this->getDoctrine()->getManager();
+        $blogentry = $this->getBlogEntry($em, $blogentry_id);
+        $nodetranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->getNodeTranslationFor($blogentry);
 
         $comment  = new BlogComment();
-        $comment->setParent($blogentry);
+        $comment->setParent($nodetranslation);
         $request = $this->getRequest();
         $form = $this->createForm(new BlogCommentType(), $comment);
 
         if ('POST' == $request->getMethod()) {
             $form->bind($request);
             if ($form->isValid()) {
-                // TODO: Persist the comment entity
 
-                $em = $this->getDoctrine()->getManager();
-                $nodetranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->getNodeTranslationFor($blogentry);
+                $em->persist($comment);
+                $em->flush();
 
-                return $this->redirect($this->get('router')->generate('_slug', array('url' => $nodetranslation->getUrl())));
+                return $this->redirect($this->get('router')->generate('_slug', array('url' => $nodetranslation->getUrl())). '#comment-' . $comment->getId());
             }
         }
 
         return $this->render('KadekeBlogBundle:BlogComment:create.html.twig', array(
             'comment' => $comment,
+            'page' => $blogentry,
             'form'    => $form->createView()
         ));
     }
 
-    public function getBlogEntry($blogentry_id)
+    public function getBlogEntry($em, $blogentry_id)
     {
-        $em = $this->getDoctrine()->getManager();
         $blogEntryRepository = $em->getRepository('KadekeBlogBundle:BlogEntry');
+
         return $blogEntryRepository->find($blogentry_id);
     }
 

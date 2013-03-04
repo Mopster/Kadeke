@@ -23,8 +23,13 @@ class BlogCommentRepository extends EntityRepository
      */
     public function findByBlogEntry($id)
     {
-        return array();
-        //return $this->findBy(array('parent' => $id), array('timestamp' => "ASC"));
+        $blogEntryRepository = $this->_em->getRepository('KadekeBlogBundle:BlogEntry');
+        $blogentry = $blogEntryRepository->find($id);
+
+        $nodeTranslationRepository = $this->_em->getRepository('KunstmaanNodeBundle:NodeTranslation');
+        $nodetranslation = $nodeTranslationRepository->getNodeTranslationFor($blogentry);
+
+        return $this->findBy(array('parent' => $nodetranslation->getId()), array('timestamp' => "ASC"));
     }
 
 }
