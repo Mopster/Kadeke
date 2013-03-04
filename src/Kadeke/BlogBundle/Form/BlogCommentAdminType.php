@@ -7,7 +7,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\AbstractType;
 
 /**
- * The type for TestEntity
+ * The type for BlogComment
  */
 class BlogCommentAdminType extends AbstractType {
 
@@ -24,6 +24,16 @@ class BlogCommentAdminType extends AbstractType {
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $builder->add(
+            'created',
+            'datetime',
+            array(
+                'required' => true,
+                'date_widget' => 'single_text',
+                'time_widget' => 'single_text',
+                'date_format' => 'dd/MM/yyyy'
+            )
+        );
         $builder->add('title');
         $builder->add('text');
         $builder->add('name');

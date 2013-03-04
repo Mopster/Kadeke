@@ -1,0 +1,8 @@
+<div class="comments">
+    <h3>Comments</h3>
+    <div class="well">
+        {% for comment in comments %}
+            {% include 'KadekeBlogBundle:BlogComment:view.html.twig' %}
+        {% endfor %}
+    </div>
+</div>

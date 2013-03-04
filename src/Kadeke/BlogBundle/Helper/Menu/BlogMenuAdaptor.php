@@ -22,6 +22,15 @@ class BlogMenuAdaptor implements MenuAdaptorInterface
                 $parent->setActive(true);
             }
             $children[] = $menuitem;
+            $menuitem = new TopMenuItem($menu);
+            $menuitem->setRoute('KadekeBlogBundle_admin_blogcomment');
+            $menuitem->setInternalName('Blog Comments');
+            $menuitem->setParent($parent);
+            if (stripos($request->attributes->get('_route'), $menuitem->getRoute()) === 0) {
+                $menuitem->setActive(true);
+                $parent->setActive(true);
+            }
+            $children[] = $menuitem;
         }
     }
 }

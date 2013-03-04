@@ -35,6 +35,7 @@ class BlogCommentAdminListConfigurator extends AbstractDoctrineORMAdminListConfi
         $this->addField('name', 'name', true);
         $this->addField('email', 'email', true);
         $this->addField('website', 'website', true);
+        $this->addField('created', 'created', true);
     }
 
     /**
@@ -47,6 +48,7 @@ class BlogCommentAdminListConfigurator extends AbstractDoctrineORMAdminListConfi
         $this->addFilter('name', new ORM\StringFilterType('name'), 'Name');
         $this->addFilter('email', new ORM\StringFilterType('email'), 'Email');
         $this->addFilter('website', new ORM\StringFilterType('website'), 'Website');
+        $this->addFilter('created', new ORM\DateFilterType('created'), 'Created');
     }
 
     /**

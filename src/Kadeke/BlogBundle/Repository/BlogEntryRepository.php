@@ -7,7 +7,12 @@ use Doctrine\ORM\Query\ResultSetMappingBuilder;
 
 class BlogEntryRepository extends EntityRepository
 {
-    public function getMostRecentBlogEntries($limit = 3)
+    /**
+     * @var QueryBuilder
+     */
+    public $qb;
+
+    public function getMostRecentBlogEntries($limit)
     {
         $rsm = new ResultSetMappingBuilder($this->_em);
         $rsm->addRootEntityFromClassMetadata('Kadeke\BlogBundle\Entity\BlogEntry', 'qp');
@@ -29,6 +34,7 @@ class BlogEntryRepository extends EntityRepository
         $query .= " AND";
         $query .= " nt.online = 1 ";
         $query .= " ORDER BY entry.date DESC";
+        $query .= " limit " . $limit;
 
         $q = $this->_em->createNativeQuery($query, $rsm);
 

@@ -10,4 +10,9 @@
         <div class="social-button li"><script type="IN/Share" data-counter="right" data-showzero="true"></script></div>
         <div class="social-button fb"><div class="fb-like" data-href="{{ path('_slug', {'url' : nodetranslation.url }) }}" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-action="recommend"></div></div>
     </div>
+
+    {% block comments %}
+        {% render url('kadekeblogbundle_comments', {'blogEntry': get_node_for(page).id}) %}
+    {% endblock %}
+
 {% endblock %}

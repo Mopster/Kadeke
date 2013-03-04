@@ -11,3 +11,10 @@ KadekeBlogBundle_blogcomment_admin_list:
     prefix:   /{_locale}/admin/blogcomment/
     requirements:
          _locale: %requiredlocales%
+
+KadekeBlogBundle_blogentry:
+    resource: @KadekeBlogBundle/Controller/BlogEntryController.php
+    type:     annotation
+    prefix:   /{_locale}/
+    requirements:
+        _locale: %requiredlocales%

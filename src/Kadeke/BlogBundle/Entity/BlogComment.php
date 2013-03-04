@@ -3,11 +3,12 @@
 namespace Kadeke\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * BlogComment
  *
- * @ORM\Table()
+ * @ORM\Table(name="kd_blog_comments")
  * @ORM\Entity(repositoryClass="Kadeke\BlogBundle\Repository\BlogCommentRepository")
  */
 class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
@@ -15,38 +16,53 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     /**
      * @var string
      *
-     * @ORM\Column(name="Title", type="string", length=255)
+     * @ORM\Column(name="title", type="string", length=255)
      */
     private $title;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Text", type="text")
+     * @ORM\Column(name="text", type="text")
      */
     private $text;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Name", type="string", length=255)
+     * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Email", type="string", length=255)
+     * @ORM\Column(name="email", type="string", length=255)
      */
     private $email;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="Website", type="string", length=255)
+     * @ORM\Column(name="website", type="string", length=255)
      */
     private $website;
 
+    /**
+     * @var \DateTime
+     *
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="created", type="datetime")
+     */
+    private $created;
+
+    /**
+     * @var BlogEntry
+     *
+     * @ORM\ManyToOne(targetEntity="BlogEntry")
+     * @ORM\JoinColumn(name="blogentry_id", referencedColumnName="id")
+     */
+    private $parent;
 
     /**
      * Set title
@@ -57,14 +73,14 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     public function setTitle($title)
     {
         $this->title = $title;
-    
+
         return $this;
     }
 
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -80,14 +96,14 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     public function setText($text)
     {
         $this->text = $text;
-    
+
         return $this;
     }
 
     /**
      * Get text
      *
-     * @return string 
+     * @return string
      */
     public function getText()
     {
@@ -103,14 +119,14 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -126,14 +142,14 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     public function setEmail($email)
     {
         $this->email = $email;
-    
+
         return $this;
     }
 
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -149,17 +165,60 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     public function setWebsite($website)
     {
         $this->website = $website;
-    
+
         return $this;
     }
 
     /**
      * Get website
      *
-     * @return string 
+     * @return string
      */
     public function getWebsite()
     {
         return $this->website;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return BlogComment
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set parent
+     *
+     * @param $parent
+     */
+    public function setParent($parent)
+    {
+        $this->parent = $parent;
+    }
+
+    /**
+     * Get parent
+     *
+     * @return BlogEntry
+     */
+    public function getParent()
+    {
+        return $this->parent;
     }
 }

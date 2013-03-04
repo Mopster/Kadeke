@@ -12,4 +12,19 @@ use Doctrine\ORM\EntityRepository;
  */
 class BlogCommentRepository extends EntityRepository
 {
+
+    /**
+     * Returns a list of BlogComments with parent $blogentry
+     * Ordered by ascending timestamp
+     *
+     * @param $id int
+     *
+     * @return array
+     */
+    public function findByBlogEntry($id)
+    {
+        return array();
+        //return $this->findBy(array('parent' => $id), array('timestamp' => "ASC"));
+    }
+
 }
