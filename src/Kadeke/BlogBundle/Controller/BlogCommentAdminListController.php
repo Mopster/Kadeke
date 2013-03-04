@@ -93,11 +93,20 @@ class BlogCommentAdminListController extends AdminListController
     /**
      * @Route("/export.{_format}", requirements={"_format" = "csv"}, name="KadekeBlogBundle_admin_blogcomment_export")
      * @Method({"GET", "POST"})
+     *
+     * @param $_format
+     *
      * @return array
      */
     public function exportAction($_format)
     {
         return parent::doExportAction($this->getAdminListConfigurator(), $_format);
     }
+
+    public function canAdd()
+    {
+        return false;
+    }
+
 
 }

@@ -18,3 +18,10 @@ KadekeBlogBundle_blogentry:
     prefix:   /{_locale}/
     requirements:
         _locale: %requiredlocales%
+
+KadekeBlogBundle_blogcomment:
+    resource: @KadekeBlogBundle/Controller/BlogCommentController.php
+    type:     annotation
+    prefix:   /{_locale}/
+    requirements:
+        _locale: %requiredlocales%

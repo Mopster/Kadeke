@@ -12,7 +12,14 @@
     </div>
 
     {% block comments %}
-        {% render url('kadekeblogbundle_comments', {'blogEntry': get_node_for(page).id}) %}
+        <div class="comments">
+            <h3>Comments</h3>
+            <div class="well">
+                {% render url('kadekeblogbundle_comments', {'blogEntry': get_node_for(page).id}) %}
+                <h4>Add Comment</h4>
+                {% render url('kadekeblogbundle_comment_new', { 'blogentry_id': get_node_for(page).id }) %}
+            </div>
+        </div>
     {% endblock %}
 
 {% endblock %}
