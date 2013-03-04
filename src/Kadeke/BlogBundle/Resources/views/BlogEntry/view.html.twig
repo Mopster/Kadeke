@@ -15,9 +15,9 @@
         <div class="comments">
             <h3>Comments</h3>
             <div class="well">
-                {% render url('kadekeblogbundle_comments', {'blogEntry': get_node_for(page).id}) %}
+                {% render url('kadekeblogbundle_comments', {'blogEntry': page.id}) %}
                 <h4>Add Comment</h4>
-                {% render url('kadekeblogbundle_comment_new', { 'blogentry_id': get_node_for(page).id }) %}
+                {% render url('kadekeblogbundle_comment_new', { 'blogentry_id': page.id }) %}
             </div>
         </div>
     {% endblock %}

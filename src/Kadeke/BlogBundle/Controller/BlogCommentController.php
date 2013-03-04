@@ -51,10 +51,10 @@ class BlogCommentController extends Controller
             if ($form->isValid()) {
                 // TODO: Persist the comment entity
 
-                return $this->redirect($this->generateUrl('BloggerBlogBundle_blog_show', array(
-                        'id' => $comment->getBlog()->getId())) .
-                        '#comment-' . $comment->getId()
-                );
+                $em = $this->getDoctrine()->getManager();
+                $nodetranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->getNodeTranslationFor($blogentry);
+
+                return $this->redirect($this->get('router')->generate('_slug', array('url' => $nodetranslation->getUrl())));
             }
         }
 
@@ -66,9 +66,7 @@ class BlogCommentController extends Controller
 
     public function getBlogEntry($blogentry_id)
     {
-        $em = $this
-            ->getDoctrine()
-            ->getManager();
+        $em = $this->getDoctrine()->getManager();
         $blogEntryRepository = $em->getRepository('KadekeBlogBundle:BlogEntry');
         return $blogEntryRepository->find($blogentry_id);
     }

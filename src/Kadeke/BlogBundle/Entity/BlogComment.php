@@ -57,10 +57,10 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     private $created;
 
     /**
-     * @var BlogEntry
+     * @var Node
      *
-     * @ORM\ManyToOne(targetEntity="BlogEntry")
-     * @ORM\JoinColumn(name="blogentry_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Node")
+     * @ORM\JoinColumn(name="node_id", referencedColumnName="id")
      */
     private $parent;
 
@@ -215,7 +215,7 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     /**
      * Get parent
      *
-     * @return BlogEntry
+     * @return Node
      */
     public function getParent()
     {
