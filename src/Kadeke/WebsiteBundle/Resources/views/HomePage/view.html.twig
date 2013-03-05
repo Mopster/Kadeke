@@ -13,7 +13,7 @@
                     <h5 class="blog_intro">How do you create a blog using the Kunstmaan bundles for Symfony2. I will explain how I built this blog step by step and help you on your merry way.</h5>
                 </div>
                 <div class="span12 well blog_summary">
-                    {% render 'KadekeBlogBundle:BlogEntry:getMostRecentBlogEntries' with {'limit' : 3} %}
+                    {% render url('kadekeblogbundle_mostrecentblogentries', {'limit': 3}) %}
                 </div>
             </div>
             <div class="span4">

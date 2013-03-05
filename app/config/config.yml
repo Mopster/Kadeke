@@ -118,6 +118,7 @@ stof_doctrine_extensions:
            loggable: true
            translatable: true
            sluggable: true
+           timestampable: true
 
 liip_imagine:
     cache_prefix: uploads/cache
