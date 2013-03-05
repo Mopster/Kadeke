@@ -111,12 +111,7 @@ class BlogEntry extends AbstractPage implements HasPagePartsInterface
         $comment = new BlogComment();
         $comment->setParent($nodetranslation);
         // Create the form based on the BlogCommentType
-        $formBuilder = $container->get('form.factory')->createBuilder('form');
-        $data = $formBuilder->getData();
-        $data['main'] = $comment;
-        $formBuilder->add('main', new BlogCommentType());
-        $formBuilder->setData($data);
-        $form = $formBuilder->getForm();
+        $form = $container->get('form.factory')->create( new BlogCommentType(), $comment);
         // Has the Form been posted
         if ('POST' == $request->getMethod()) {
             $form->bind($request);
