@@ -3,6 +3,7 @@
 namespace Kadeke\BlogBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Form\FormBuilderInterface;
 
 class BlogCommentType extends AbstractType
@@ -20,6 +21,13 @@ class BlogCommentType extends AbstractType
     public function getName()
     {
         return "blogcomment_user_form";
+    }
+
+    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'Kadeke\BlogBundle\Entity\BlogComment',
+        ));
     }
 
 }

@@ -4,6 +4,10 @@ namespace Kadeke\BlogBundle\Entity;
 
 
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
+use Kadeke\BlogBundle\Form\BlogCommentType;
+use Symfony\Component\HttpFoundation\Request;
+use Kunstmaan\NodeBundle\Helper\RenderContext;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Kunstmaan\PagePartBundle\Helper\HasPagePartsInterface;
 use Kadeke\WebsiteBundle\PagePartAdmin\BannerPagePartAdminConfigurator;
 use Kadeke\WebsiteBundle\PagePartAdmin\ContentPagePagePartAdminConfigurator;
@@ -96,4 +100,38 @@ class BlogEntry extends AbstractPage implements HasPagePartsInterface
             $this->setDate(new \DateTime());
         }
     }
+
+    public function service(ContainerInterface $container, Request $request, RenderContext $context)
+    {
+        parent::service($container, $request, $context);
+        $em = $container->get('doctrine')->getManager();
+        // Find the NodeTranslation for the BlogEntry, since that will be the parent of our comment
+        $nodetranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->getNodeTranslationFor($this);
+        // Create a new Entity
+        $comment = new BlogComment();
+        $comment->setParent($nodetranslation);
+        // Create the form based on the BlogCommentType
+        $formBuilder = $container->get('form.factory')->createBuilder('form');
+        $data = $formBuilder->getData();
+        $data['main'] = $comment;
+        $formBuilder->add('main', new BlogCommentType());
+        $formBuilder->setData($data);
+        $form = $formBuilder->getForm();
+        // Has the Form been posted
+        if ('POST' == $request->getMethod()) {
+            $form->bind($request);
+            // Check for validation error
+            if ($form->isValid()) {
+                // Persist the comment
+                $em->persist($comment);
+                $em->flush();
+                $context['success'] = true;
+                return;
+            }
+        }
+        $context['form'] = $form->createView();
+        $context['comment'] = $comment;
+    }
+
+
 }

@@ -221,4 +221,5 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     {
         return $this->parent;
     }
+
 }

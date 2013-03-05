@@ -1,8 +1,0 @@
-{% block commentform %}
-    <form action="{{ path('kadekeblogbundle_comment_create', { 'blogentry_id' : page.id } ) }}" method="post" {{ form_enctype(form) }}>
-        {{ form_widget(form) }}
-        <p>
-            <input type="submit" value="Submit">
-        </p>
-    </form>
-{% endblock %}
