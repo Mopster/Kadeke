@@ -14,8 +14,8 @@ class BlogCommentType extends AbstractType
         $builder->add('title');
         $builder->add('text');
         $builder->add('name');
-        $builder->add('email');
-        $builder->add('website');
+        $builder->add('email', 'email', array('required' => false ));
+        $builder->add('website', 'text', array('required' => false ));
     }
 
     public function getName()
