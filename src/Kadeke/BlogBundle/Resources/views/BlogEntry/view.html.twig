@@ -11,11 +11,14 @@
         <div class="social-button fb"><div class="fb-like" data-href="{{ path('_slug', {'url' : nodetranslation.url }) }}" data-send="true" data-layout="button_count" data-width="450" data-show-faces="false" data-action="recommend"></div></div>
     </div>
 
+    <hr />
+
     {% block comments %}
         <div class="comments">
             <h3>Comments</h3>
             <div class="well">
                 {% render url('kadekeblogbundle_comments', {'blogEntry': page.id}) %}
+                <hr/>
                 <h4>Add Comment</h4>
                 {% render url('kadekeblogbundle_comment_new', { 'blogentry_id': page.id }) %}
             </div>

@@ -1,5 +1,5 @@
 {% block comment %}
     <h5>{{ comment.getTitle() }}</h5>
-    <h6>{{ comment.getDate() | date('dS F Y - H:i') }} | {% if comment.getWebsite() %}<a href="{{ comment.getWebsite() }}" target="_blank">{% endif %}{{ comment.getName() }}{% if comment.getWebsite() %}</a>{% endif %}</h6>
+    <h6>{{ comment.getCreated() | date('dS F Y - H:i') }} | {% if comment.getWebsite() %}<a href="{{ comment.getWebsite() }}" target="_blank">{% endif %}{{ comment.getName() }}{% if comment.getWebsite() %}</a>{% endif %}</h6>
     <p>{{ comment.getText() }}</p>
 {% endblock %}

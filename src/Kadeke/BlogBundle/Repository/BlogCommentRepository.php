@@ -29,7 +29,7 @@ class BlogCommentRepository extends EntityRepository
         $nodeTranslationRepository = $this->_em->getRepository('KunstmaanNodeBundle:NodeTranslation');
         $nodetranslation = $nodeTranslationRepository->getNodeTranslationFor($blogentry);
 
-        return $this->findBy(array('parent' => $nodetranslation->getId()), array('timestamp' => "ASC"));
+        return $this->findBy(array('parent' => $nodetranslation->getId()), array('created' => "ASC"));
     }
 
 }
