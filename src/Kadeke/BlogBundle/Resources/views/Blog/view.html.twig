@@ -6,7 +6,7 @@
 
     {% set count = 1 %}
     {% block blog %}
-        {% for entry in nodemenu.current.children %}
+        {% for entry in blogentries %}
             {% if count > 1 %}<hr />{% endif %}
             {% include 'KadekeBlogBundle:BlogEntry:teaser.html.twig' %}
             {% set count = count + 1 %}

@@ -3,6 +3,9 @@
 namespace Kadeke\BlogBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Kunstmaan\NodeBundle\Helper\RenderContext;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Kadeke\WebsiteBundle\PagePartAdmin\BannerPagePartAdminConfigurator;
 use Kadeke\WebsiteBundle\PagePartAdmin\ContentPagePagePartAdminConfigurator;
 use Kunstmaan\PagePartBundle\Helper\HasPagePartsInterface;
@@ -49,5 +52,15 @@ class Blog extends AbstractPage implements HasPagePartsInterface
     {
         return array(new ContentPagePagePartAdminConfigurator(), new BannerPagePartAdminConfigurator());
     }
+
+    public function service(ContainerInterface $container, Request $request, RenderContext $context)
+    {
+        parent::service($container, $request, $context);
+
+        $em = $container->get('doctrine')->getManager();
+        $blogEntryRepository = $em->getRepository('KadekeBlogBundle:BlogEntry');
+        $context['blogentries'] = $blogEntryRepository->getBlogEntries();
+    }
+
 
 }

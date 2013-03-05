@@ -1,8 +1,9 @@
 {% block teaser %}
-    {% set blogentry = entry.page %}
+
+    {% set blogentrynode = get_node_translation_for(entry) %}
     <div class="blog-entry-teaser">
-        <h3><a href="{{ entry.url }}">{{ blogentry.title }}</a></h3>
-        <h4 class="date">{{ blogentry.getDate() | date('dS F Y - H:i') }}</h4>
-        {{ render_pageparts(blogentry, 'main') | truncate(500) | striptags }}
+        <h3><a href="{{ blogentrynode.url }}">{{ entry.title }}</a></h3>
+        <h4 class="date">{{ entry.getDate() | date('dS F Y - H:i') }}</h4>
+        {{ render_pageparts(entry, 'main') | striptags | truncate(500) | raw  }}
     </div>
 {% endblock %}
