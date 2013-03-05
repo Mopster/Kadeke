@@ -1,7 +1,7 @@
 {% block teaser %}
     {% set blogentry = entry.page %}
     <div class="blog-entry-teaser">
-        <h2><a href="{{ entry.url }}">{{ blogentry.title }}</a></h2>
+        <h3><a href="{{ entry.url }}">{{ blogentry.title }}</a></h3>
         <h4 class="date">{{ blogentry.getDate() | date('dS F Y - H:i') }}</h4>
         {{ render_pageparts(blogentry, 'main') | truncate(500) | striptags }}
     </div>
