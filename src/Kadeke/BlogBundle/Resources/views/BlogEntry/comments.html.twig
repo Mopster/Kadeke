@@ -1,0 +1,6 @@
+{% set count = 0 %}
+{% for comment in comments %}
+    {% if count > 0 %}<hr />{% endif %}
+    {% include 'KadekeBlogBundle:BlogComment:view.html.twig' %}
+    {% set count = count + 1 %}
+{% endfor %}

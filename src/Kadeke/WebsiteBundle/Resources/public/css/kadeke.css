@@ -69,3 +69,15 @@ hr {
 .span12 .blog_summary {
     margin-left:0px;
 }
+
+.comments input, .comments textarea, .comments .uneditable-input {
+    width: 300px;
+}
+
+.comments input[type="submit"] {
+    width: auto;
+}
+
+.comments textarea {
+    height: 106px;
+}
