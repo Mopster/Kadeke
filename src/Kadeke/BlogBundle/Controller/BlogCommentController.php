@@ -20,12 +20,13 @@ class BlogCommentController extends Controller
     public function newCommentAction($blogentry_id)
     {
         $em = $this->getDoctrine()->getManager();
+        // Find the NodeTranslation for the BlogEntry, since that will be the parent of our comment
         $blogentry = $this->getBlogEntry($em, $blogentry_id);
         $nodetranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->getNodeTranslationFor($blogentry);
-
+        // Create a new Entity
         $comment = new BlogComment();
         $comment->setParent($nodetranslation);
-
+        // Create the form based on the BlogCommentType
         $form = $this->createForm(new BlogCommentType(), $comment);
 
         return array(
@@ -43,21 +44,25 @@ class BlogCommentController extends Controller
     public function createCommentAction($blogentry_id)
     {
         $em = $this->getDoctrine()->getManager();
+        // Find the NodeTranslation for the BlogEntry, since that will be the parent of our comment
         $blogentry = $this->getBlogEntry($em, $blogentry_id);
         $nodetranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->getNodeTranslationFor($blogentry);
-
-        $comment  = new BlogComment();
+        // Create a new Entity
+        $comment = new BlogComment();
         $comment->setParent($nodetranslation);
         $request = $this->getRequest();
+        // Create the form based on the BlogCommentType
         $form = $this->createForm(new BlogCommentType(), $comment);
-
+        // Has the Form been posted
         if ('POST' == $request->getMethod()) {
             $form->bind($request);
+            // Check for validation error
             if ($form->isValid()) {
-
+                // Persist the comment
                 $em->persist($comment);
                 $em->flush();
 
+                // And redirect the user back to the blog entry
                 return $this->redirect($this->get('router')->generate('_slug', array('url' => $nodetranslation->getUrl())). '#comment-' . $comment->getId());
             }
         }
@@ -69,6 +74,14 @@ class BlogCommentController extends Controller
         ));
     }
 
+    /**
+     * Get the BlogEntry for the given id
+     *
+     * @param $em
+     * @param $blogentry_id
+     *
+     * @return mixed
+     */
     public function getBlogEntry($em, $blogentry_id)
     {
         $blogEntryRepository = $em->getRepository('KadekeBlogBundle:BlogEntry');

@@ -57,7 +57,7 @@ class BlogComment extends \Kunstmaan\AdminBundle\Entity\AbstractEntity
     private $created;
 
     /**
-     * @var Node
+     * @var NodeTranslation
      *
      * @ORM\ManyToOne(targetEntity="Kunstmaan\NodeBundle\Entity\NodeTranslation")
      * @ORM\JoinColumn(name="parent_id", referencedColumnName="id")
