@@ -24,6 +24,7 @@
                     <a name="addcomment"></a>
                     <h4>Add Comment</h4>
                     {% if success is not defined %}
+                        {% form_theme form 'KadekeWebsiteBundle:Form:fields.html.twig' %}
                         <form action="{{ path('_slug', {'url' : nodetranslation.url }) }}#addcomment" method="post" {{ form_enctype(form) }}>
                             <div class="row-fluid">
                                 <div class="span12">

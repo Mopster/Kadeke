@@ -55,3 +55,10 @@
     {% endif %}
 {% endspaceless %}
 {% endblock choice_widget %}
+
+{% block captcha_widget %}
+    {% spaceless %}
+        <p></p><img src="{{ captcha_code }}" title="captcha" width="{{ captcha_width }}" height="{{ captcha_height }}" /></p>
+        {{ form_widget(form) }}
+    {% endspaceless %}
+{% endblock %}
