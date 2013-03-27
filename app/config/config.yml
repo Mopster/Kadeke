@@ -169,3 +169,5 @@ services:
 
     kunstmaan_logging_formatter:
         class: Monolog\Formatter\LineFormatter
+
+gregwar_captcha: ~
