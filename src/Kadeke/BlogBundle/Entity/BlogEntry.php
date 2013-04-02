@@ -2,9 +2,7 @@
 
 namespace Kadeke\BlogBundle\Entity;
 
-
 use Doctrine\Common\Collections\ArrayCollection;
-use DoctrineExtensions\Taggable\Doctrine;
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
 use Kadeke\BlogBundle\Form\BlogCommentType;
 use Kunstmaan\TaggingBundle\Entity\Taggable;
@@ -131,7 +129,6 @@ class BlogEntry extends AbstractPage implements HasPagePartsInterface, Taggable
         }
         $context['form'] = $form->createView();
         $context['comment'] = $comment;
-        $content['tags'] = $this->getTags();
     }
 
 
