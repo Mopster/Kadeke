@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new Kadeke\BlogBundle\KadekeBlogBundle(),
             new Kadeke\WebsiteBundle\KadekeWebsiteBundle(),
+            new Kunstmaan\TaggingBundle\KunstmaanTaggingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
@@ -62,7 +63,6 @@ class AppKernel extends Kernel
         $bundles[] = new Kunstmaan\NewRelicBundle\KunstmaanNewRelicBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
-
         if (in_array($this->getEnvironment(), array('prod'))){
             // KunstmaanSentryBundle
             $bundles[] = new Kunstmaan\SentryBundle\KunstmaanSentryBundle();

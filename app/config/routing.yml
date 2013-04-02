@@ -49,3 +49,10 @@ KunstmaanFormBundle:
     prefix:   /{_locale}/
     requirements:
         _locale: %requiredlocales%
+
+# KunstmaanTaggingBundle
+KunstmaanTaggingBundle:
+    resource: "@KunstmaanTaggingBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
+    requirements:
+        _locale: %requiredlocales%

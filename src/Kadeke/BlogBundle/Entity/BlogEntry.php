@@ -3,8 +3,11 @@
 namespace Kadeke\BlogBundle\Entity;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
+use DoctrineExtensions\Taggable\Doctrine;
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
 use Kadeke\BlogBundle\Form\BlogCommentType;
+use Kunstmaan\TaggingBundle\Entity\Taggable;
 use Symfony\Component\HttpFoundation\Request;
 use Kunstmaan\NodeBundle\Helper\RenderContext;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -19,7 +22,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="kd_blog_entries")
  * @ORM\HasLifecycleCallbacks
  */
-class BlogEntry extends AbstractPage implements HasPagePartsInterface
+class BlogEntry extends AbstractPage implements HasPagePartsInterface, Taggable
 {
 
     /**
@@ -38,6 +41,8 @@ class BlogEntry extends AbstractPage implements HasPagePartsInterface
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
      */
     protected $author;
+
+    protected $tags;
 
     public function setDate($date)
     {
@@ -129,4 +134,34 @@ class BlogEntry extends AbstractPage implements HasPagePartsInterface
     }
 
 
+    /**
+     * Returns the unique taggable resource type
+     *
+     * @return string
+     */
+    function getTaggableType()
+    {
+        return "blogentry";
+    }
+
+    /**
+     * Returns the unique taggable resource identifier
+     *
+     * @return string
+     */
+    function getTaggableId()
+    {
+        return $this->getId();
+    }
+
+    /**
+     * Returns the collection of tags for this Taggable entity
+     *
+     * @return Doctrine\Common\Collections\Collection
+     */
+    function getTags()
+    {
+        $this->tags = $this->tags ?: new ArrayCollection();
+        return $this->tags;
+    }
 }
