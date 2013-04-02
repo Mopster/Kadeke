@@ -23,6 +23,7 @@ class BlogEntryAdminType extends AbstractType
                 'date_format' => 'dd/MM/yyyy'
             )
         );
+        $builder->add('tags', 'kunstmaan_taggingbundle_tags');
 
     }
 

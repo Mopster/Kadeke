@@ -131,6 +131,7 @@ class BlogEntry extends AbstractPage implements HasPagePartsInterface, Taggable
         }
         $context['form'] = $form->createView();
         $context['comment'] = $comment;
+        $content['tags'] = $this->getTags();
     }
 
 
@@ -163,5 +164,10 @@ class BlogEntry extends AbstractPage implements HasPagePartsInterface, Taggable
     {
         $this->tags = $this->tags ?: new ArrayCollection();
         return $this->tags;
+    }
+
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
     }
 }

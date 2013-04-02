@@ -1,7 +1,7 @@
 {% extends 'KadekeWebsiteBundle:Page:layout.html.twig' %}
 {% block content %}
     <h2>{{ page.title }}</h2>
-    <h4 class="date">{{ page.getDate() | date('dS F Y - H:i') }}</h4>
+    <h4 class="date">{{ page.getDate() | date('dS F Y - H:i') }} {% if page.tags.count > 0 %}{% for tag in page.tags %}&nbsp;<span class="label label-inverse">{{ tag.name }}</span>{% endfor %}{% endif %}</h4>
 
     {{ render_pageparts(page, 'main') }}
 
