@@ -52,7 +52,9 @@
     "doctrine/migrations": "dev-master",
     "gregwar/captcha-bundle": "dev-master",
     "fpn/doctrine-extensions-taggable": "dev-master",
-    "kunstmaan/tagging-bundle": "dev-master"
+    "kunstmaan/tagging-bundle": "dev-master",
+    "sherlock/sherlock": "0.1.9",
+    "kunstmaan/search-bundle": "dev-sherlock"
   },
   "scripts": {
     "post-install-cmd": [
