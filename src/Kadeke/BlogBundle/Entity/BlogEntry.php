@@ -167,4 +167,11 @@ class BlogEntry extends AbstractPage implements HasPagePartsInterface, Taggable
     {
         $this->tags = $tags;
     }
+
+    public function deepClone(EntityManager $em)
+    {
+        $newpage = parent::deepClone($em);
+        $em->getRepository('KunstmaanTaggingBundle:Tag')->copyTags($this, $newpage);
+        return $newpage;
+    }
 }
