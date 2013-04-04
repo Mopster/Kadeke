@@ -81,3 +81,7 @@ hr {
 .comments textarea {
     height: 106px;
 }
+
+#footer {
+    margin-top:20px;
+}
