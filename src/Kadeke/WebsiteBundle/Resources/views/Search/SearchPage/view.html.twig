@@ -9,12 +9,17 @@
     {% if q_query is defined and q_query != '' %}
         <h3>Results</h3>
         <div class="span12" style="margin-left: 0">
-            <div class="span9" style="margin-left: 0;">
+            <div class="span9" style="margin-left: 0">
                 {% set count = 0 %}
                 {% for searchresult in hits %}
                     {% if count > 0 %}<hr />{% endif %}
-                    <div>
+                    <div style=" margin-right: 20px;">
                         <h4><a href="{{ searchresult['source']['slug'] }}">{{ searchresult['source']['title'] }}</a></h4>
+                        {% if searchresult['highlight'] is defined %}
+                            <p>{{ searchresult['highlight']['content'][0] | raw }}</p>
+                        {% else %}
+                            <p>{{ searchresult['source']['content'] | truncate(300) }}</p>
+                        {% endif %}
                     </div>
                     {% set count = count + 1 %}
                 {% endfor %}

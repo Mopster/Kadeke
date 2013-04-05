@@ -5,6 +5,7 @@ namespace Kadeke\WebsiteBundle\Entity\Search;
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
 use Doctrine\ORM\Mapping as ORM;
 use Kunstmaan\NodeBundle\Helper\RenderContext;
+use Kunstmaan\SearchBundle\Helper\IndexControllerInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -12,7 +13,7 @@ use Symfony\Component\HttpFoundation\Request;
  * @ORM\Entity()
  * @ORM\Table(name="kd_searchpage")
  */
-class SearchPage extends AbstractPage {
+class SearchPage extends AbstractPage implements IndexControllerInterface {
 
     public function service(ContainerInterface $container, Request $request, RenderContext $context)
     {
@@ -55,5 +56,13 @@ class SearchPage extends AbstractPage {
     public function getDefaultView()
     {
         return "KadekeWebsiteBundle:Search\SearchPage:view.html.twig";
+    }
+
+    /**
+     * @return boolean
+     */
+    public function shouldBeIndexed()
+    {
+        return false;
     }
 }
