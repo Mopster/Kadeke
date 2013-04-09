@@ -18,7 +18,7 @@
                         {% if searchresult['highlight'] is defined %}
                             <p>{{ searchresult['highlight']['content'][0] | raw }}</p>
                         {% else %}
-                            <p>{{ searchresult['source']['content'] | truncate(300) }}</p>
+                            <p>{{ searchresult['source']['content'] | truncate(300) | escape('html') }}</p>
                         {% endif %}
                     </div>
                     {% set count = count + 1 %}

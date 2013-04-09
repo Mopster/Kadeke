@@ -30,8 +30,8 @@ class SearchPage extends AbstractPage implements IndexControllerInterface {
             }
         }
         if ($querystring and $querystring != "") {
-            $sherlock = $container->get('kunstmaan_search.sherlock');
-            $response = $sherlock->searchIndex($querystring, $querytype, $tags);
+            $search = $container->get('kunstmaan_search.search');
+            $response = $search->search($querystring, $querytype, $tags);
 
             $context['hits'] = $response->hits;
             $context['q_query'] = $querystring;
