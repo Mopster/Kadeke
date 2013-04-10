@@ -49,8 +49,8 @@ class SearchPage extends AbstractPage implements IndexControllerInterface {
         $sherlock = $container->get('kunstmaan_search.searchprovider.sherlock');
         $request = $sherlock->getSherlock()->search();
 
-        $titleQuery = Sherlock::queryBuilder()->Wildcard()->field("title")->value($querystring);
-        $contentQuery = Sherlock::queryBuilder()->Wildcard()->field("content")->value($querystring);
+        $titleQuery = Sherlock::queryBuilder()->Fuzzy()->field("title")->value($querystring);
+        $contentQuery = Sherlock::queryBuilder()->Fuzzy()->field("content")->value($querystring);
 
         $query = $tagQuery = Sherlock::queryBuilder()->Bool()->should($titleQuery, $contentQuery)->minimum_number_should_match(1);
 
