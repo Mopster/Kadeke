@@ -53,7 +53,8 @@
     "gregwar/captcha-bundle": "dev-master",
     "fpn/doctrine-extensions-taggable": "dev-master",
     "kunstmaan/tagging-bundle": "dev-master",
-    "kunstmaan/search-bundle": "dev-sherlock"
+    "kunstmaan/search-bundle": "dev-sherlock",
+    "kunstmaan/node-search-bundle": "dev-master"
   },
   "scripts": {
     "post-install-cmd": [
