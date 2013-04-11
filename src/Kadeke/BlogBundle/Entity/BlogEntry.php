@@ -3,6 +3,7 @@
 namespace Kadeke\BlogBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\EntityManager;
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
 use Kadeke\BlogBundle\Form\BlogCommentType;
 use Kunstmaan\TaggingBundle\Entity\Taggable;
