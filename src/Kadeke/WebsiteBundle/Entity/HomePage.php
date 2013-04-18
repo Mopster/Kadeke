@@ -82,6 +82,6 @@ class HomePage extends AbstractPage implements HasPagePartsInterface, IndexContr
      */
     public function shouldBeIndexed()
     {
-        return false;
+        return true;
     }
 }
