@@ -55,7 +55,7 @@ class HomePage extends AbstractPage implements HasPagePartsInterface, IndexContr
             ),
             array(
                 'name' => 'Search',
-                'class'=> "Kunstmaan\NodeSearchBundle\Entity\SearchPage"
+                'class'=> "Kadeke\WebsiteBundle\Entity\Pages\SearchPage"
             )
         );
     }
