@@ -23,13 +23,14 @@ class AppKernel extends Kernel
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new Kadeke\BlogBundle\KadekeBlogBundle(),
             new Kadeke\WebsiteBundle\KadekeWebsiteBundle(),
-            new Kunstmaan\TaggingBundle\KunstmaanTaggingBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
+            // KunstmaanGeneratorBundle
+            $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
         }
 
         $bundles[] = new Kunstmaan\UtilitiesBundle\KunstmaanUtilitiesBundle();
@@ -56,11 +57,10 @@ class AppKernel extends Kernel
         // KunstmaanAdminListBundle
         $bundles[] = new Kunstmaan\AdminListBundle\KunstmaanAdminListBundle();
         $bundles[] = new WhiteOctober\PagerfantaBundle\WhiteOctoberPagerfantaBundle();
-
-        // KunstmaanGeneratorBundle
-        $bundles[] = new Kunstmaan\GeneratorBundle\KunstmaanGeneratorBundle();
         // KunstmaanNewRelicBundle
         $bundles[] = new Kunstmaan\NewRelicBundle\KunstmaanNewRelicBundle();
+        // KunstmaanTaggingBundle
+        $bundles[] = new Kunstmaan\TaggingBundle\KunstmaanTaggingBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
         if (in_array($this->getEnvironment(), array('prod'))){
