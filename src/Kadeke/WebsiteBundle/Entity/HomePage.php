@@ -5,6 +5,7 @@ namespace Kadeke\WebsiteBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 use Kunstmaan\SearchBundle\Helper\IndexControllerInterface;
+use Kunstmaan\SearchBundle\Helper\ShouldBeIndexed;
 use Symfony\Component\Form\AbstractType;
 
 use Kunstmaan\NodeBundle\Entity\AbstractPage;
@@ -18,7 +19,7 @@ use Kadeke\WebsiteBundle\PagePartAdmin\HomePagePagePartAdminConfigurator;
  * @ORM\Entity()
  * @ORM\Table(name="kd_home_pages")
  */
-class HomePage extends AbstractPage implements HasPagePartsInterface, IndexControllerInterface
+class HomePage extends AbstractPage implements HasPagePartsInterface, ShouldBeIndexed
 {
 
     /**
@@ -56,6 +57,10 @@ class HomePage extends AbstractPage implements HasPagePartsInterface, IndexContr
             array(
                 'name' => 'Search',
                 'class'=> "Kadeke\WebsiteBundle\Entity\Pages\SearchPage"
+            ),
+            array(
+                'name' => 'Article overview',
+                'class'=> "Kunstmaan\ArticleBundle\Entity\AbstractArticleOverviewPage"
             )
         );
     }
