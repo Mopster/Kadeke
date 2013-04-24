@@ -1,0 +1,4 @@
+KadekeTripBundle_default:
+    resource: "@KadekeTripBundle/Controller/DefaultController.php"
+    type:     annotation
+    prefix:   /

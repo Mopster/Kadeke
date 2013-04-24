@@ -1,3 +1,7 @@
+kadeke_trip:
+    resource: "@KadekeTripBundle/Resources/config/routing.yml"
+    prefix:   /
+
 kadeke_website:
     resource: "@KadekeWebsiteBundle/Resources/config/routing.yml"
     prefix:   /

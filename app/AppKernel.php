@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Gregwar\CaptchaBundle\GregwarCaptchaBundle(),
             new Kadeke\BlogBundle\KadekeBlogBundle(),
             new Kadeke\WebsiteBundle\KadekeWebsiteBundle(),
+            new Kadeke\TripBundle\KadekeTripBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
