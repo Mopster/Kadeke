@@ -51,7 +51,7 @@
     "kunstmaan/seo-bundle": "dev-master",
     "kunstmaan/newrelicbundle": "dev-master",
     "kunstmaan/search-bundle": "dev-sherlock",
-    "kunstmaan/generator-bundle": "dev-master",
+    "kunstmaan/generator-bundle": "dev-sensio-2.2",
     "kunstmaan/sentry-bundle": "dev-master",
     "kunstmaan/utilities-bundle": "dev-master",
     "kunstmaan/behat-bundle": "dev-master",
