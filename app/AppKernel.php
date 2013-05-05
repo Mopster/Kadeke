@@ -61,6 +61,10 @@ class AppKernel extends Kernel
         $bundles[] = new Kunstmaan\NewRelicBundle\KunstmaanNewRelicBundle();
         // KunstmaanTaggingBundle
         $bundles[] = new Kunstmaan\TaggingBundle\KunstmaanTaggingBundle();
+        // KunstmaanSearchBundle
+        $bundles[] = new Kunstmaan\SearchBundle\KunstmaanSearchBundle();
+        // KunstmaanNodeSearchBundle
+        $bundles[] = new Kunstmaan\NodeSearchBundle\KunstmaanNodeSearchBundle();
         // LiipCacheControlBundle
         $bundles[] = new Liip\CacheControlBundle\LiipCacheControlBundle();
         if (in_array($this->getEnvironment(), array('prod'))){
