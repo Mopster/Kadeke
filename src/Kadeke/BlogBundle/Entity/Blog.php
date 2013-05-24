@@ -31,6 +31,10 @@ class Blog extends AbstractPage implements HasPagePartsInterface
             array(
                 'name' => 'BlogEntry',
                 'class'=> "Kadeke\BlogBundle\Entity\BlogEntry"
+            ),
+            array(
+                'name' => 'Infinite blog',
+                'class'=> "Kadeke\BlogBundle\Entity\BlogOverviewPage"
             )
         );
     }
@@ -61,6 +65,5 @@ class Blog extends AbstractPage implements HasPagePartsInterface
         $blogEntryRepository = $em->getRepository('KadekeBlogBundle:BlogEntry');
         $context['blogentries'] = $blogEntryRepository->getBlogEntries();
     }
-
 
 }
