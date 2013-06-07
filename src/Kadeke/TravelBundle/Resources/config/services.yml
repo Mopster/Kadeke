@@ -1,0 +1,11 @@
+parameters:
+#    kadeke_travel.example.class: Kadeke\TravelBundle\Example
+
+services:
+#    kadeke_travel.example:
+#        class: %kadeke_travel.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+    kadeketravelbundle.menu.adaptor:
+        class: Kadeke\TravelBundle\Helper\Menu\TravelMenuAdaptor
+        tags:
+            - { name: kunstmaan_admin.menu.adaptor }
