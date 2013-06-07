@@ -17,7 +17,7 @@
       "symfony/assetic-bundle": "2.1.2",
       "kriswallsmith/assetic" : "1.1.0-alpha4",
       "symfony/swiftmailer-bundle": "2.2.*",
-      "symfony/monolog-bundle": "2.2.*",
+      "symfony/monolog-bundle": "2.2.0",
       "sensio/distribution-bundle": "2.2.*",
       "sensio/framework-extra-bundle": "2.2.*",
       "jms/security-extra-bundle": "1.4.*",
@@ -31,8 +31,8 @@
       "gregwar/form-bundle": "dev-master",
       "white-october/pagerfanta-bundle": "dev-master",
       "pagerfanta/pagerfanta": "dev-master",
-      "symfony-cmf/routing-extra-bundle": "1.0.*@dev",
-      "symfony-cmf/routing": "1.0.*@dev",
+      "symfony-cmf/routing-extra-bundle": "1.0.0",
+      "symfony-cmf/routing": "1.0.0",
       "raven/raven": "dev-master",
       "liip/cache-control-bundle": "dev-master",
       "knplabs/knp-menu": "dev-master",
@@ -55,7 +55,8 @@
       "kunstmaan/utilities-bundle": "dev-master",
       "kunstmaan/behat-bundle": "dev-master",
       "kunstmaan/tagging-bundle": "dev-master",
-      "kunstmaan/article-bundle": "dev-master"
+      "kunstmaan/article-bundle": "dev-master",
+      "kunstmaan/sitemap-bundle": "dev-master"
   },
   "minimum-stability": "dev",
   "scripts": {
