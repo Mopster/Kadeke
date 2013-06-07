@@ -1,6 +1,7 @@
 
     {% javascripts
         '@KadekeWebsiteBundle/Resources/public/js/jquery.js'
+        '@KadekeWebsiteBundle/Resources/public/js/jquery.infinitescroll.min.js'
         '@KadekeWebsiteBundle/Resources/public/js/bootstrap.min.js'
         '@KadekeWebsiteBundle/Resources/public/js/bootswatch.js'
 
@@ -14,5 +15,17 @@
         $.SyntaxHighlighter.init({
             'theme':'google',
             'themes': ['google']
+        });
+        jQuery('.blog').infinitescroll({
+            navSelector  : "div.blognav",
+            // selector for the paged navigation (it will be hidden)
+            nextSelector : "div.blognav a:first",
+            // selector for the NEXT link (to page 2)
+            itemSelector : "div.day",
+            // selector for all items you'll retrieve
+            loading: {
+                finishedMsg: "",
+                msgText: ""
+            }
         });
     </script>

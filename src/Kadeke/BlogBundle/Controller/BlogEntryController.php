@@ -4,6 +4,7 @@ namespace Kadeke\BlogBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Request;
 
 class BlogEntryController extends Controller
 {
@@ -47,6 +48,40 @@ class BlogEntryController extends Controller
         $comments = $blogCommentRepository->findByBlogEntry($blogEntry);
 
         return array('comments' => $comments);
+    }
+
+    /**
+     * @Route("/blog/infinite", name="kadekeblogbundle_infinite_articles")
+     * @Template("KadekeBlogBundle:BlogOverviewPage:content.html.twig")
+     *
+     * @param  Request $request
+     * @return array
+     */
+    public function infiniteAction(Request $request)
+    {
+        $em = $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('KadekeBlogBundle:BlogEntry');
+        $now = date('Y-m-d');
+        $page = $request->get('page');
+        if (!$page) {
+            $nextArticle = $repository->getNextArticleDate(null, 0);
+        } else {
+            $nextArticle = $repository->getNextArticleDate($now, $page - 1);
+        }
+        if (count($nextArticle) > 0) {
+            $pagedate = $nextArticle[0]->getDate();
+            $day = $pagedate->format('Y-m-d');
+            $articles = $repository->getArticles($day);
+            $next = date('Y-m-d', strtotime($day . ' - 1 day'));
+
+            return array(
+                'articles' => $articles,
+                'day' => $pagedate,
+                'next' => $next
+            );
+        }
+
+        return array();
     }
 
 }

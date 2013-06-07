@@ -1,0 +1,11 @@
+{% extends 'KadekeWebsiteBundle:Page:layout.html.twig' %}
+
+{% block content %}
+    <h2>{{ page.title }}</h2>
+    <hr />
+    {{ render_pageparts(page, 'main') }}
+    <div id="blog" class="blog">
+        {{ render(controller('KadekeBlogBundle:BlogEntry:infinite')) }}
+        <div  class="blognav"><a href="{{ path('kadekeblogbundle_infinite_articles', {'page' : 1}) }}">Next</a></div>
+    </div>
+{% endblock %}

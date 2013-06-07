@@ -1,0 +1,17 @@
+{% if articles|length > 0 %}
+    <div class="day">
+        <div class="span12" style="margin-left: 0;">
+            <div class="span2" style="margin-left: 0;"><div class="btn btn-inverse date">{{ day|date('j M Y') }}</div></div>
+            <div class="span10" style="margin-left: 0;">
+                {% for entry in articles %}
+                    <div class="entry">
+                        <h4 style="margin-top: 0; line-height: 30px;"><span class="btn btn-default hour">{{ entry.date|date('G:i') }}</span> {{ entry.title }}</h4>
+                        <div class="well">
+                            {{ render_pageparts(entry, 'main') }}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
