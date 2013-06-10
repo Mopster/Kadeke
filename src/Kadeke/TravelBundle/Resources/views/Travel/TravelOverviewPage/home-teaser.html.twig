@@ -1,0 +1,5 @@
+{% for entry in travelpages %}
+    {% set travelnodetranslation = entry['nodetranslation'] %}
+    {% set travelpage = entry['page'] %}
+    {% include 'KadekeTravelBundle:Travel/TravelPage:home-teaser.html.twig' %}
+{% endfor %}

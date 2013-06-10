@@ -5,23 +5,43 @@
 
     {{ render_pageparts(page, 'main') }}
 
-    <div class="row-fluid">
-        <div class="span12">
-            <div class="span8">
-                <div class="span12">
-                    <h3 class="blog_title" >Creating a Kunstmaan Bundles Blog</h3>
-                    <h5 class="blog_intro">How do you create a blog using the Kunstmaan bundles for Symfony2. I will explain how I built this blog step by step and help you on your merry way.</h5>
+    {% if app.request.locale == "en" %}
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="span8">
+                    <div class="span12">
+                        <h3 class="blog_title" >Creating a Kunstmaan Bundles Blog</h3>
+                        <h5 class="blog_intro">How do you create a blog using the Kunstmaan bundles for Symfony2. I will explain how I built this blog step by step and help you on your merry way.</h5>
+                    </div>
+                    <div class="span12 well blog_summary">
+                        {% render url('kadekeblogbundle_mostrecentblogentries', {'_locale' : app.request.locale, 'limit': 3}) %}
+                    </div>
                 </div>
-                <div class="span12 well blog_summary">
-                    {% render url('kadekeblogbundle_mostrecentblogentries', {'limit': 3}) %}
+                <div class="span4">
+                    <a class="twitter-timeline"  href="https://twitter.com/MopsterKD"  data-widget-id="304564545567985665">Tweets by @MopsterKD</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
                 </div>
-            </div>
-            <div class="span4">
-                <a class="twitter-timeline"  href="https://twitter.com/MopsterKD"  data-widget-id="304564545567985665">Tweets by @MopsterKD</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
             </div>
         </div>
-    </div>
+    {% else %}
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="span8">
+                    <div class="span12">
+                        <h3 class="blog_title" >Mijn reisblog</h3>
+                        <h5 class="blog_intro">Hieronder vind je de 3 recentste blog artikels terug van mijn reizen.</h5>
+                    </div>
+                    <div class="span12 well blog_summary">
+                        {% render url('kadeketravelbundle_mostrecent', {'_locale' : app.request.locale, 'limit': 3}) %}
+                    </div>
+                </div>
+                <div class="span4">
+                    <a class="twitter-timeline"  href="https://twitter.com/MopsterKD"  data-widget-id="304564545567985665">Tweets by @MopsterKD</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
 
 {% block footer_to_top %}{% endblock %}

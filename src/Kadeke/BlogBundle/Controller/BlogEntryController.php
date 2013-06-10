@@ -12,16 +12,18 @@ class BlogEntryController extends Controller
     /**
      * @Route("/blog/latest/{limit}", name="kadekeblogbundle_mostrecentblogentries")
      * @Template("KadekeBlogBundle:Blog:home-teaser.html.twig")
+     *
+     * @param     $_locale
      * @param int $limit
      *
      * @return array
      */
-    public function getMostRecentBlogEntriesAction($limit)
+    public function getMostRecentBlogEntriesAction($_locale, $limit)
     {
         $limit = (int) $limit;
         $em = $this->getDoctrine()->getManager();
         $blogEntryRepository = $em->getRepository('KadekeBlogBundle:BlogEntry');
-        $blogentries = $blogEntryRepository->getMostRecentBlogEntries($limit);
+        $blogentries = $blogEntryRepository->getMostRecentBlogEntries($_locale, $limit);
 
         $nodeTranslationRepository = $em->getRepository('KunstmaanNodeBundle:NodeTranslation');
         $blognodes = array();
