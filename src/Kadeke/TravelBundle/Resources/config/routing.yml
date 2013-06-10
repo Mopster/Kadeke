@@ -1,8 +1,3 @@
-KadekeTravelBundle_default:
-    resource: "@KadekeTravelBundle/Controller/DefaultController.php"
-    type:     annotation
-    prefix:   /
-
 KadekeTravelBundle_travelpage_admin_list:
     resource: @KadekeTravelBundle/Controller/Travel/TravelPageAdminListController.php
     type:     annotation
