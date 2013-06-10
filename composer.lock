@@ -1668,12 +1668,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/l3pp4rd/DoctrineExtensions.git",
-                "reference": "5e1618a772e47db94af3d5d103a334cb9da54ffb"
+                "reference": "e977a758ca848029c1ec577c63e532cc5c4f4392"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/5e1618a772e47db94af3d5d103a334cb9da54ffb",
-                "reference": "5e1618a772e47db94af3d5d103a334cb9da54ffb",
+                "url": "https://api.github.com/repos/l3pp4rd/DoctrineExtensions/zipball/e977a758ca848029c1ec577c63e532cc5c4f4392",
+                "reference": "e977a758ca848029c1ec577c63e532cc5c4f4392",
                 "shasum": ""
             },
             "require": {
@@ -1702,7 +1702,7 @@
             },
             "autoload": {
                 "psr-0": {
-                    "Gedmo": "lib/"
+                    "Gedmo\\": "lib/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1740,7 +1740,7 @@
                 "tree",
                 "uploadable"
             ],
-            "time": "2013-06-07 12:58:59"
+            "time": "2013-06-10 14:45:47"
         },
         {
             "name": "gregwar/captcha",
@@ -2921,12 +2921,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanArticleBundle.git",
-                "reference": "v0.1"
+                "reference": "6a3049b8286060eedcb735ad973f7e31f42e9dac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanArticleBundle/zipball/v0.1",
-                "reference": "v0.1",
+                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanArticleBundle/zipball/6a3049b8286060eedcb735ad973f7e31f42e9dac",
+                "reference": "6a3049b8286060eedcb735ad973f7e31f42e9dac",
                 "shasum": ""
             },
             "require": {
@@ -2963,7 +2963,7 @@
                 "kunstmaan",
                 "news"
             ],
-            "time": "2013-06-10 13:48:34"
+            "time": "2013-06-10 14:31:53"
         },
         {
             "name": "kunstmaan/behat-bundle",
@@ -3080,12 +3080,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle.git",
-                "reference": "c6a029646ff892373d903365eab083f12a15f3d8"
+                "reference": "f0f8c81ccc731d8fe4a8c908b0ea035f31ff0662"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanGeneratorBundle/zipball/c6a029646ff892373d903365eab083f12a15f3d8",
-                "reference": "c6a029646ff892373d903365eab083f12a15f3d8",
+                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanGeneratorBundle/zipball/f0f8c81ccc731d8fe4a8c908b0ea035f31ff0662",
+                "reference": "f0f8c81ccc731d8fe4a8c908b0ea035f31ff0662",
                 "shasum": ""
             },
             "require": {
@@ -3127,7 +3127,7 @@
                 "generator",
                 "kunstmaan"
             ],
-            "time": "2013-06-10 13:41:03"
+            "time": "2013-06-10 14:40:14"
         },
         {
             "name": "kunstmaan/media-bundle",
@@ -5083,12 +5083,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "1f26887d4bf5a21312207605ea023914b4aec7a5"
+                "reference": "f4788121eb096e343b6ae672f6f403389f6af764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/1f26887d4bf5a21312207605ea023914b4aec7a5",
-                "reference": "1f26887d4bf5a21312207605ea023914b4aec7a5",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/f4788121eb096e343b6ae672f6f403389f6af764",
+                "reference": "f4788121eb096e343b6ae672f6f403389f6af764",
                 "shasum": ""
             },
             "require": {
@@ -5174,7 +5174,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-06-08 15:01:11"
+            "time": "2013-06-10 14:56:21"
         },
         {
             "name": "twig/extensions",
