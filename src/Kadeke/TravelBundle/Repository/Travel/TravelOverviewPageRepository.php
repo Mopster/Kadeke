@@ -2,8 +2,7 @@
 
 namespace Kadeke\TravelBundle\Repository\Travel;
 
-use Doctrine\ORM\Query\ResultSetMappingBuilder;
-use Kunstmaan\ArticleBundle\Repository\AbstractArticlePageRepository;
+use Kunstmaan\ArticleBundle\Repository\AbstractArticleOverviewPageRepository;
 
 /**
  * Repository class for the TravelOverviewPage
