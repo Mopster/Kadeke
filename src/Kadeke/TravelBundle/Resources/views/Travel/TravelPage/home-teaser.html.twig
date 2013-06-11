@@ -2,6 +2,6 @@
     <div class="blog-entry-teaser">
         <h4><a href="{{ path('_slug', {'_locale' : travelnodetranslation.lang, 'url' : travelnodetranslation.url }) }}">{{ travelpage.title }}</a></h4>
         <h5 class="date">{{ travelpage.getDate() | date('dS F Y - H:i') }}</h5>
-        {{ travelpage.getSummary() | raw }}
+        {{ render_pageparts(travelpage, 'main') | striptags | truncate(300) | raw }}
     </div>
 {% endblock %}
