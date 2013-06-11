@@ -46,16 +46,16 @@ class TravelPageAdminListConfigurator extends AbstractArticlePageAdminListConfig
      * @return \Doctrine\ORM\EntityRepository
      */
     public function getOverviewPageRepository()
-{
-    return $this->em->getRepository('KadekeTravelBundle:Travel\TravelOverviewPage');
-}
+    {
+        return $this->em->getRepository('KadekeTravelBundle:Travel\TravelOverviewPage');
+    }
 
     /**
      * @return string
      */
     public function getListTemplate()
-{
-    return 'KadekeTravelBundle:AdminList/Travel/TravelPageAdminList:list.html.twig';
-}
+    {
+        return 'KadekeTravelBundle:AdminList/Travel/TravelPageAdminList:list.html.twig';
+    }
 
 }
