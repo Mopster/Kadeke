@@ -884,12 +884,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/common.git",
-                "reference": "2286642f9979a15a799e6fb6919579e8caf6ef11"
+                "reference": "d658ec7a03f6475eff0dd1eb940bdedd862e4b96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/common/zipball/2286642f9979a15a799e6fb6919579e8caf6ef11",
-                "reference": "2286642f9979a15a799e6fb6919579e8caf6ef11",
+                "url": "https://api.github.com/repos/doctrine/common/zipball/d658ec7a03f6475eff0dd1eb940bdedd862e4b96",
+                "reference": "d658ec7a03f6475eff0dd1eb940bdedd862e4b96",
                 "shasum": ""
             },
             "require": {
@@ -917,7 +917,7 @@
             ],
             "authors": [
                 {
-                    "name": "Jonathan H. Wage",
+                    "name": "Jonathan Wage",
                     "email": "jonwage@gmail.com",
                     "homepage": "http://www.jwage.com/"
                 },
@@ -937,7 +937,7 @@
                 {
                     "name": "Johannes Schmitt",
                     "email": "schmittjoh@gmail.com",
-                    "homepage": "https://github.com/schmittjoh",
+                    "homepage": "http://jmsyst.com",
                     "role": "Developer of wrapped JMSSerializerBundle"
                 }
             ],
@@ -950,7 +950,7 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2013-06-10 10:34:35"
+            "time": "2013-06-10 18:20:01"
         },
         {
             "name": "doctrine/data-fixtures",
@@ -2921,12 +2921,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanArticleBundle.git",
-                "reference": "6a3049b8286060eedcb735ad973f7e31f42e9dac"
+                "reference": "f76b48d610835efa6342e218b89541b4831f7ed4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanArticleBundle/zipball/6a3049b8286060eedcb735ad973f7e31f42e9dac",
-                "reference": "6a3049b8286060eedcb735ad973f7e31f42e9dac",
+                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanArticleBundle/zipball/f76b48d610835efa6342e218b89541b4831f7ed4",
+                "reference": "f76b48d610835efa6342e218b89541b4831f7ed4",
                 "shasum": ""
             },
             "require": {
@@ -2963,7 +2963,7 @@
                 "kunstmaan",
                 "news"
             ],
-            "time": "2013-06-10 14:31:53"
+            "time": "2013-06-11 14:07:10"
         },
         {
             "name": "kunstmaan/behat-bundle",
@@ -3080,12 +3080,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanGeneratorBundle.git",
-                "reference": "f0f8c81ccc731d8fe4a8c908b0ea035f31ff0662"
+                "reference": "b797ac9b0e142c918e8cc00666cee118840a21c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanGeneratorBundle/zipball/f0f8c81ccc731d8fe4a8c908b0ea035f31ff0662",
-                "reference": "f0f8c81ccc731d8fe4a8c908b0ea035f31ff0662",
+                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanGeneratorBundle/zipball/b797ac9b0e142c918e8cc00666cee118840a21c3",
+                "reference": "b797ac9b0e142c918e8cc00666cee118840a21c3",
                 "shasum": ""
             },
             "require": {
@@ -3127,7 +3127,7 @@
                 "generator",
                 "kunstmaan"
             ],
-            "time": "2013-06-10 14:40:14"
+            "time": "2013-06-11 14:05:49"
         },
         {
             "name": "kunstmaan/media-bundle",
@@ -3275,12 +3275,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanNodeBundle.git",
-                "reference": "4e518c685692d65fb5d0c02e76c4f349ecb17b0b"
+                "reference": "9a946df3b38c8154ebdc0b35b480120befcafe6c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanNodeBundle/zipball/4e518c685692d65fb5d0c02e76c4f349ecb17b0b",
-                "reference": "4e518c685692d65fb5d0c02e76c4f349ecb17b0b",
+                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanNodeBundle/zipball/9a946df3b38c8154ebdc0b35b480120befcafe6c",
+                "reference": "9a946df3b38c8154ebdc0b35b480120befcafe6c",
                 "shasum": ""
             },
             "require": {
@@ -3318,7 +3318,7 @@
                 "kunstmaan",
                 "tree"
             ],
-            "time": "2013-06-03 20:39:19"
+            "time": "2013-06-11 09:42:25"
         },
         {
             "name": "kunstmaan/node-search-bundle",
@@ -3615,12 +3615,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Kunstmaan/KunstmaanTaggingBundle.git",
-                "reference": "c170e940bafd4b73a4f29ec4088e06bb11357dc3"
+                "reference": "2e27570e47456482b9ddbe7a860b55b1734e8995"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanTaggingBundle/zipball/c170e940bafd4b73a4f29ec4088e06bb11357dc3",
-                "reference": "c170e940bafd4b73a4f29ec4088e06bb11357dc3",
+                "url": "https://api.github.com/repos/Kunstmaan/KunstmaanTaggingBundle/zipball/2e27570e47456482b9ddbe7a860b55b1734e8995",
+                "reference": "2e27570e47456482b9ddbe7a860b55b1734e8995",
                 "shasum": ""
             },
             "require": {
@@ -3657,7 +3657,7 @@
                 "tag",
                 "tagging"
             ],
-            "time": "2013-04-17 14:50:50"
+            "time": "2013-06-11 11:34:26"
         },
         {
             "name": "kunstmaan/utilities-bundle",
@@ -4585,12 +4585,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioGeneratorBundle.git",
-                "reference": "de7e174440acce7319fb26c3fc23081f962cb98f"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/de7e174440acce7319fb26c3fc23081f962cb98f",
-                "reference": "de7e174440acce7319fb26c3fc23081f962cb98f",
+                "url": "https://api.github.com/repos/sensiolabs/SensioGeneratorBundle/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -4632,12 +4632,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/polyfractal/sherlock.git",
-                "reference": "9f7365bf467f5d4ff769350d20ca7e850387ad8d"
+                "reference": "v0.1.13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/polyfractal/sherlock/zipball/9f7365bf467f5d4ff769350d20ca7e850387ad8d",
-                "reference": "9f7365bf467f5d4ff769350d20ca7e850387ad8d",
+                "url": "https://api.github.com/repos/polyfractal/sherlock/zipball/v0.1.13",
+                "reference": "v0.1.13",
                 "shasum": ""
             },
             "require": {
@@ -4673,7 +4673,7 @@
                 "elasticsearch",
                 "search"
             ],
-            "time": "2013-06-03 14:03:46"
+            "time": "2013-06-11 00:45:52"
         },
         {
             "name": "stof/doctrine-extensions-bundle",
@@ -5029,12 +5029,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/SwiftmailerBundle.git",
-                "reference": "v2.3.0-RC1"
+                "reference": "v2.3.1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/v2.3.0-RC1",
-                "reference": "v2.3.0-RC1",
+                "url": "https://api.github.com/repos/symfony/SwiftmailerBundle/zipball/v2.3.1",
+                "reference": "v2.3.1",
                 "shasum": ""
             },
             "require": {
@@ -5083,12 +5083,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "f4788121eb096e343b6ae672f6f403389f6af764"
+                "reference": "8ec7962f92155e3c0df44d666a57630da1977e96"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/f4788121eb096e343b6ae672f6f403389f6af764",
-                "reference": "f4788121eb096e343b6ae672f6f403389f6af764",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/8ec7962f92155e3c0df44d666a57630da1977e96",
+                "reference": "8ec7962f92155e3c0df44d666a57630da1977e96",
                 "shasum": ""
             },
             "require": {
@@ -5174,7 +5174,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2013-06-10 14:56:21"
+            "time": "2013-06-11 11:39:42"
         },
         {
             "name": "twig/extensions",
