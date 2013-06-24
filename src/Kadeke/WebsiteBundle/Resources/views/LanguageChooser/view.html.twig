@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ websitetitle | trans }}{% block title %}{% endblock %}</title>
+    {% if page is defined %}
+        {{ render_seo_metadata_for(page) }}
+    {% endif %}
+    <link rel="shortcut icon" href="{{ asset('/favicon.ico') }}" type="image/x-icon">
+    {% include 'KadekeWebsiteBundle:Layout:_css.html.twig' %}
+
+    {% include 'KadekeWebsiteBundle:Layout:_js_header.html.twig' %}
+
+    <meta property="fb:admins" content="1323111955"/>
+    <meta property="fb:app_id" content="155418951283069"/>
+</head>
+<body id="top">
+
+<div class="container">
+    <header class="jumbotron subhead" id="overview">
+        <div class="row">
+            <div class="span8">
+                <h1><a href="/">Kadeke</a></h1>
+                <p class="lead">The this's and thatses of a web developer</p>
+            </div>
+        </div>
+    </header>
+
+    <section id="content">
+        {% block content %}
+            <div class="row-fluid">
+                <div class="span12">
+                    <div class="span6 well">
+                        <div class="span12">
+                            <h3 class="blog_title" ><a href="/en">Developer Blog</a></h3>
+                            <p>My profesional website my my developer blog.</p>
+                            <a class="btn" href="/en">Developer blog</a>
+                        </div>
+                    </div>
+                    <div class="span6 well">
+                        <div class="span12">
+                            <h3 class="blog_title" ><a href="/nl">Mijn reisblog</a></h3>
+                            <p>Mijn persoonlijke website, o.a. mijn reisblog.</p>
+                            <a class="btn" href="/nl">Reisblog</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    </section>
+
+    <hr />
+    <footer id="footer">
+        {% block footer %}
+            {% block footer_to_top %}
+                <p class="pull-right">
+                    <a href="#top">Back to top</a>
+                </p>
+            {% endblock %}
+            <div class="links">
+            </div>
+
+            <div class="disclaimer">
+                Built with <a href="http://bundles.kunstmaan.be"target="_blank">Kunstmaan Bundles</a> | Theme by <a href="http://bootswatch.com/readable/" target="_blank">Bootswatch</a>
+            </div>
+        {% endblock %}
+    </footer>
+</div>
+
+
+{% include 'KadekeWebsiteBundle:Layout:_js_footer.html.twig' %}
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=155418951283069";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+
+<script>
+    var _gaq=[['_setAccount','UA-38620620-1'],['_trackPageview']];
+    (function(d,t){
+        var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+        s.parentNode.insertBefore(g,s)
+    }(document,'script'));
+</script>
+
+</body>
+</html>
