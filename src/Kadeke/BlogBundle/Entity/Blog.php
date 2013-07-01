@@ -63,7 +63,7 @@ class Blog extends AbstractPage implements HasPagePartsInterface
 
         $em = $container->get('doctrine')->getManager();
         $blogEntryRepository = $em->getRepository('KadekeBlogBundle:BlogEntry');
-        $context['blogentries'] = $blogEntryRepository->getBlogEntries();
+        $context['blogentries'] = $blogEntryRepository->getBlogEntries($request->getLocale());
     }
 
 }
