@@ -1,4 +1,47 @@
 {% extends 'KadekeWebsiteBundle:Layout:layout.html.twig' %}
 {% block content %}
     {% include 'KunstmaanArticleBundle:AbstractArticlePage:view.html.twig' %}
+    
+    <hr />
+    {% block comments %}
+        <a name="comments"></a>
+        <div class="comments">
+            <h3>Berichten</h3>
+            <div class="well">
+                {% render url('kadeketravelbundle_comments', {'travelPage': page.id}) %}
+                {% block commentform %}
+                    <hr/>
+                    <a name="addcomment"></a>
+                    <h4>Bericht toevoegen</h4>
+                    {% if success is not defined %}
+                        {% form_theme form 'KadekeWebsiteBundle:Form:fields.html.twig' %}
+                        <form action="{{ path('_slug', {'url' : nodetranslation.url }) }}#addcomment" method="post" {{ form_enctype(form) }}>
+                            <div class="row-fluid">
+                                <div class="span12">
+                                    <div class="span4">
+                                        {{ form_row(form.title) }}
+                                        {{ form_row(form.text) }}
+                                    </div>
+                                    <div class="span4">
+                                        {{ form_row(form.name) }}
+                                        {{ form_row(form.email) }}
+                                        {{ form_row(form.website) }}
+                                    </div>
+                                    <div class="span4">
+
+                                    </div>
+                                </div>
+                            </div>
+                            {{ form_widget(form) }}
+                            <p>
+                                <input type="submit" value="Submit">
+                            </p>
+                        </form>
+                    {% else %}
+                        <p>Uw bericht werd geplaatst!</p>
+                    {% endif %}
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
 {% endblock %}

@@ -11,6 +11,13 @@ KadekeTravelBundle_travelauthor_admin_list:
     prefix:   /{_locale}/admin/travelauthor/
     requirements:
          _locale: %requiredlocales%
+         
+KadekeTravelBundle_travelcomment_admin_list:
+    resource: @KadekeTravelBundle/Controller/Travel/TravelCommentAdminListController.php
+    type:     annotation
+    prefix:   /{_locale}/admin/travelcomment/
+    requirements:
+         _locale: %requiredlocales%         
 
 KadekeTravelBundle_travel:
     resource: @KadekeTravelBundle/Controller/TravelController.php

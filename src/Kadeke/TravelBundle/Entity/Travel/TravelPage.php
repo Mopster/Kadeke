@@ -3,11 +3,15 @@
 namespace Kadeke\TravelBundle\Entity\Travel;
 
 use Doctrine\ORM\Mapping as ORM;
+use Kadeke\TravelBundle\Form\Travel\TravelCommentType;
 use Kunstmaan\ArticleBundle\Entity\AbstractArticlePage;
 use Kadeke\TravelBundle\Entity\Travel\TravelAuthor;
 use Kadeke\TravelBundle\Form\Travel\TravelPageAdminType;
 use Kadeke\TravelBundle\PagePartAdmin\Travel\TravelPagePagePartAdminConfigurator;
+use Kunstmaan\NodeBundle\Helper\RenderContext;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * @ORM\Entity(repositoryClass="Kadeke\TravelBundle\Repository\Travel\TravelPageRepository")
@@ -65,10 +69,37 @@ class TravelPage extends AbstractArticlePage
      * @ORM\PrePersist
      */
     public function _prePersist()
-{
-    // Set date to now when none is set
-    if ($this->date == null) {
-        $this->setDate(new \DateTime());
+    {
+        // Set date to now when none is set
+        if ($this->date == null) {
+            $this->setDate(new \DateTime());
+        }
     }
-}
+    
+    public function service(ContainerInterface $container, Request $request, RenderContext $context)
+    {
+        parent::service($container, $request, $context);
+        $em = $container->get('doctrine')->getManager();
+        // Find the NodeTranslation for the TravelPage, since that will be the parent of our comment
+        $nodetranslation = $em->getRepository('KunstmaanNodeBundle:NodeTranslation')->getNodeTranslationFor($this);
+        // Create a new Entity
+        $comment = new TravelComment();
+        $comment->setParent($nodetranslation);
+        // Create the form based on the TravelCommentType
+        $form = $container->get('form.factory')->create( new TravelCommentType(), $comment);
+        // Has the Form been posted
+        if ('POST' == $request->getMethod()) {
+            $form->bind($request);
+            // Check for validation error
+            if ($form->isValid()) {
+                // Persist the comment
+                $em->persist($comment);
+                $em->flush();
+                $context['success'] = true;
+                return;
+            }
+        }
+        $context['form'] = $form->createView();
+        $context['comment'] = $comment;
+    }   
 }

@@ -48,6 +48,15 @@ class TravelMenuAdaptor implements MenuAdaptorInterface
                 $parent->setActive(true);
             }
             $children[] = $menuitem;
+            $menuitem = new TopMenuItem($menu);
+            $menuitem->setRoute('KadekeTravelBundle_admin_travel_travelcomment');
+            $menuitem->setInternalName('Travel Comments');
+            $menuitem->setParent($parent);
+            if (stripos($request->attributes->get('_route'), $menuitem->getRoute()) === 0) {
+                $menuitem->setActive(true);
+                $parent->setActive(true);
+            }
+            $children[] = $menuitem;
         }
 
         //don't load children
