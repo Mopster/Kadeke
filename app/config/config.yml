@@ -41,7 +41,7 @@ twig:
 assetic:
     debug:          %kernel.debug%
     use_controller: false
-    bundles:        [ "KunstmaanAdminBundle", "KadekeWebsiteBundle", "KadekeWebsiteBundle", "KunstmaanAdminListBundle" ]
+    bundles:        [ "KunstmaanAdminBundle", "KadekeWebsiteBundle", "KunstmaanAdminListBundle" ]
     #java: /usr/bin/java
     filters:
         cssrewrite: ~

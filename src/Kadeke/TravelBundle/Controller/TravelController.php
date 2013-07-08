@@ -39,7 +39,7 @@ class TravelController extends Controller
      * Find the comments of the TravelComment and render the comments template of the TravelPage
      *
      * @Route("/travel/comments/{travelPage}", name="kadeketravelbundle_comments")
-     * @Template("KadekeTravelBundle:Travel/TravelComment:comments.html.twig")
+     * @Template("KadekeTravelBundle:Travel/TravelPage:comments.html.twig")
      * @param $travelPage int
      *
      * @return array
@@ -47,7 +47,7 @@ class TravelController extends Controller
     public function getCommentsAction($travelPage)
     {
         $em = $this->getDoctrine()->getManager();
-        $travelCommentRepository = $em->getRepository('KadekeTravelBundle:Travel/TravelComment');
+        $travelCommentRepository = $em->getRepository('KadekeTravelBundle:Travel\TravelComment');
         $comments = $travelCommentRepository->findByTravelPage($travelPage);
 
         return array('comments' => $comments);

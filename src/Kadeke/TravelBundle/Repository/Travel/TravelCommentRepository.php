@@ -20,7 +20,7 @@ class TravelCommentRepository extends EntityRepository
      */
     public function findByTravelPage($id)
     {
-        $travelPageRepository = $this->_em->getRepository('KadekeTravelBundle:Travel/TravelPage');
+        $travelPageRepository = $this->_em->getRepository('KadekeTravelBundle:Travel\TravelPage');
         $travelpage = $travelPageRepository->find($id);
 
         $nodeTranslationRepository = $this->_em->getRepository('KunstmaanNodeBundle:NodeTranslation');
